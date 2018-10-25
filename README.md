@@ -1,6 +1,4 @@
-webpack 3.5
+new project Crona Group
 
-how to install
-1. clone this repo
-2. npm install
-3. npm run dev
+webpack
+

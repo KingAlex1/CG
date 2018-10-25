@@ -3,6 +3,21 @@ extends ../base
 block head
     title index page
 block content
-    h1 ТЕСТИРУЕМ LIVERELOAD
-    img(src=require("./webpack.svg") width="100")
+    header.section.header
+        .navigation
+            .navigation__title
+                p.navigation__title_name Крона групп
+                p.navigation__title_desc Центр сертификации продукции
+            ul.navigation__tab
+                each item in ['Главная', 'О нас' , 'Услуги', 'Информация', 'Онлайн заявка' , 'Контакты']
+                    li.navigation__item #{item}
+        .presentation
+            .presentation__info
+                .presentation__info_title
+                .presentation__info_text
+
+
+
+
+
 
