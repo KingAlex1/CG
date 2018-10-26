@@ -1,0 +1,80 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.about__title_name {
+  align-self: center;
+  padding: 1rem 2rem;
+  color: #377dff;
+  background-color: rgba(55, 125, 255, 0.1);
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+.about__title_desc {
+  padding: 1rem;
+  font-size: 1.2rem;
+  width: 33vw;
+  text-align: center;
+}
+
+.about__goods {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.about__good {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  padding: 10px;
+  margin: 10px;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.about__good_img {
+  margin: 10px;
+  width: 100px;
+  height: 150px;
+  background-color: #333333;
+  z-index: 999;
+  &:hover {
+    transform: scale(1.2, 1.1);
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.about__good_title {
+
+}
+
+.about__svg {
+  width: 40vw;
+  height: 40vh;
+  opacity: .1;
+  position: absolute;
+  display: block;
+  left: 3rem;
+  padding-top: 25vh;
+}
+
+.about__svg__blog-line {
+  fill: none;
+}
+
+.about__svg-polyline {
+  stroke: black;
+  fill: none;
+  stroke-width: 1px;
+}
+
+.about__svg-circle {
+  stroke: black;
+  fill: black;
+}

@@ -1,10 +1,127 @@
-.overlay-background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 5;
-  background: #333333;
-  opacity: 0.2;
+
+.header {
+  font-family: sans-serif;
+  font-size: 1rem;
 }
+
+.navigation {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  box-shadow: 0 0 5px;
+  z-index: 9999;
+  background-color: white;
+}
+
+.navigation__title {
+  display: flex;
+  flex-direction: column;
+}
+
+.navigation__title_name {
+  display: flex;
+  flex: 1;
+  padding: 0 20px 0 30px;
+  font-weight: bold;
+}
+
+.navigation__title_desc {
+  display: flex;
+  flex: 6;
+  font-size: 0.7rem;
+  padding: 5px 0 0 30px;
+  margin: 0;
+}
+
+.navigation__tab {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  flex-wrap: wrap;
+}
+
+.navigation__item {
+  margin: 4px 16px;
+  list-style-type: none;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.presentation__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.presentation__image {
+  flex: 1;
+}
+
+.presentation__img {
+  position: absolute;
+  right: 0;
+  top: 80px;
+  height: 45vmax;
+  width: 45vw;
+  background: url("./7.png") no-repeat;
+  background-size: 100%;
+  z-index: 999;
+}
+
+.presentation__svg {
+  top: 7rem;
+  position: absolute;
+  width: 40%;
+  height: 40%;
+}
+
+.presentation__title {
+  padding: 20px 30px 10px 30px;
+  font-weight: lighter;
+}
+
+.presentation__desc {
+  padding: 20px 20px 10px 30px;
+  font-size: 1rem;
+  text-indent: 1.5rem;
+}
+
+.presentation__button {
+  padding: 15px 15px 15px 30px;
+  margin-left: 30px;
+  text-decoration: none;
+  color: #377dff;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: rgba(55, 125, 255, 0.1);
+  width: 10rem;
+  text-align: center;
+  box-shadow: 0 0 15px;
+
+  &:hover {
+    color: white;
+    background-color: #377dff;
+    box-shadow: 0 0 15px 2px grey;
+  }
+
+}
+
+.header__arrow_img {
+  position: absolute;
+  left: 50%;
+  bottom: 10vh;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+
+}
+
