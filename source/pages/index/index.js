@@ -1,8 +1,11 @@
 import 'normalize.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.scss';
 import './about.scss';
 import './animation.scss';
-import  './form.scss';
+import './form.scss';
+
 
 console.log('index.js');
 // let vimeo_player = document.querySelector('#vimeo_player');
