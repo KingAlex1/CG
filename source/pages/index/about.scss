@@ -19,12 +19,14 @@
   font-size: 1.2rem;
   width: 33vw;
   text-align: center;
+  color: #828286;
 }
 
 .about__goods {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  padding: 2rem;
 }
 
 .about__good {
@@ -51,7 +53,7 @@
 }
 
 .about__good_title {
-
+  color: #828286;
 }
 
 .about__svg {

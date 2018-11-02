@@ -4,14 +4,17 @@ block head
     title index page
 block content
     header.section.header
-        .navigation
-            .navigation__title
-                p.navigation__title_name Крона групп
-                p.navigation__title_desc Центр сертификации продукции
+        nav.navigation
+            figure.navigation__title
+                .navigation__title_name Крона групп
+                .navigation__title_desc Центр сертификации продукции
             ul.navigation__tab
                 each item in ['Главная', 'О нас' , 'Услуги', 'Информация', 'Онлайн заявка' , 'Контакты']
-                    li.navigation__item #{item}
-        .presentation
+                    li.navigation__item
+                        a(href="#" aria-label=item).side-bar__link #{item}
+
+    main.main-content
+        section.section.presentation
             .presentation__info
                 h1.presentation__title Крона Групп
                 .presentation__desc Крона Групп – центр сертификации продукции, профессиональный,
@@ -20,93 +23,140 @@ block content
                     | Если Вам нужен эффективный результат, комплексное решение и оперативность выполнения – позвоните в наш Центр Сертификации.
                     | На нашем сайте Вы можете  Вы можете заполнить предварительную заявку для росчета стоимоти. Не забудь указать обратную информацию для получения ответа.
                 p.line-1.anim-typewriter.presentation__desc Узнайте стоимость on-line или позвоните нам.
-                a(href="XXXXXXX").presentation__button Узнать стоимоть
-            .presentation__image
+                a(href="XXXXXXX" aria-label="Стоимость").presentation__button Узнать стоимоть
+            figure.presentation__image
                 .presentation__img
                 .presentation__svg
                     svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewBox='0 0 1374.7 1083.6', style='enable-background:new 0 0 1374.7 1083.6;', xml:space='preserve')
                         path.presentation__svg_cirle(opacity='.05', d='M285.2,170.1c-94.5,8.6-181.2,57.4-235.9,134.8C-34.7,423.6-54.5,621.5,349,879.8\
                       c636.5,407.6,600,9.3,591.9-47.4c-0.8-5.5-1.4-11.1-2-16.6l-34.2-374.1C888.4,262,729.2,129.6,549.4,146L285.2,170.1z')
         .header__arrow
-            img(src="source/pages/index/arrow.svg", alt="xxx")#header__arrow.header__arrow_img
-    section.section.about
-        .about__title
-            .about__title_name что мы оформляем ?
-        .about__title_desc Профессианализм и богатый опыт Наших сотрудников позволяем заниматься широким спектором в сфере оформления разрешительной документации
+            img(src="source/pages/index/arrow.svg", alt="arrow")#header__arrow.header__arrow_img
+        section.section.about
+            .about__title
+                .about__title_name что мы оформляем ?
+            .about__title_desc Профессианализм и богатый опыт Наших сотрудников позволяем заниматься широким спектором в сфере оформления разрешительной документации
 
-        .about__goods
-            -
-                var goods = ['Сертификат соответствия тех. рглентму ТС',
-                'Декларации соответствия тех. рглентму ТРТС',
-                'Добровольные сертификаты соответствия ГОСТ Р',
-                'Иинформационные/отказные письма',
-                'Сертификат менеджмента качества',
-                'Декларация соответствия ГОСТ Р',
-                'Разработка технических условий',
-                'Оформление протоколов испытаний']
-            each good in goods
-                .about__good
-                    img(src="xxx", alt="xxx").about__good_img
-                    a(href="XXXX").about__good_button
-                    .about__good_title #{good}
-        svg(viewBox="0 0 458 272", xmlns='http://www.w3.org/2000/svg').about__svg
-            g.about__svg__blog-line
-                polyline.about__svg-polyline(points="120 120, 300 154, 174 258, 213 21, 81 44,12 192,300 155, 174 258, 12 192 ")
-                polyline.about__svg-polyline(points="446 226,432 66, 301 191,446 226 ")
-                polyline.about__svg-polyline(points="446 226, 335 14, 215 180, 271 57, 446 226 ")
-            g.about__svg__blog-circle
-                circle.about__svg-circle(cx="12", cy="191", r="10")
-                circle.about__svg-circle(cx="174", cy="259", r="9")
-                circle.about__svg-circle(cx="334", cy="13", r="13")
-                circle.about__svg-circle(cx="445", cy="228", r="8")
-                circle.about__svg-circle(cx="81", cy="43", r="7")
-                circle.about__svg-circle(cx="214", cy="19", r="7")
-                circle.about__svg-circle(cx="115", cy="120", r="7")
-                circle.about__svg-circle(cx="216", cy="180", r="7")
-                circle.about__svg-circle(cx="272", cy="57", r="7")
-                circle.about__svg-circle(cx="299", cy="154", r="7")
-                circle.about__svg-circle(cx="301", cy="192", r="7")
-                circle.about__svg-circle(cx="433", cy="65", r="7")
-    section.section.form
-        svg.about__svg2
-            g.about__svg__blog-line
-                polyline.about__svg-polyline(points="7 153,72 110, 150 107, 234 164, 202 8, 255 67,99 35,202 8")
-                polyline.about__svg-polyline(points="7 153,99 35, 150 108")
-            g.hero__svg__blog-circle
-                circle.about__svg-circle(cx="7", cy="153", r="7")
-                circle.about__svg-circle(cx="72", cy="110", r="4")
-                circle.about__svg-circle(cx="150", cy="107", r="7")
-                circle.about__svg-circle(cx="234", cy="164", r="7")
-                circle.about__svg-circle(cx="202", cy="8", r="7")
-                circle.about__svg-circle(cx="255", cy="67", r="7")
-                circle.about__svg-circle(cx="99", cy="35", r="4")
-        .container.container-form
-            h2.container-form__title Узнать стоимость оформления
-            form
-                .form-row
-                    .form-group.col-md-6
-                        label(for='goods') Наименование продукции
-                        input#goods.form-control(type='text', placeholder='наименование продукции')
-                    .form-group.col-md-6
-                        label(for='code') Код ТН ВЭД продукии
-                        input#code.form-control(type='text', placeholder='код ТН ВЭД ')
-                .form-group
-                    label(for='description') Краткое описание продукции
-                    input#description.form-control(type='text', placeholder='описание продукции')
-                .form-row
-                    .form-group.col-md-6
-                        label(for='mail') E-mail
-                        input#mail.form-control(type='email', placeholder='E-mail')
-                    .form-group.col-md-6
-                        label(for='phone') Телефон
-                        input#phone.form-control(type='tel', placeholder='номер телефон')
-                .form-group
-                    label(for='name') Ф.И.О.
-                    input#name.form-control(type='text', placeholder='Ваше Имя')
-                button.btn.btn-primary(type='submit') Отправить
+            .about__goods
+                -
+                    var goods =[
+                    ['Сертификат соответствия тех. рглентму ТС', 'source/pages/index/sstrts.jpg' ],
+                    ['Декларации соответствия тех. рглентму ТРТС','source/pages/index/dstrts.jpg'],
+                    ['Добровольные сертификаты соответствия ГОСТ Р','source/pages/index/ssgost.jpg'],
+                    ['Иинформационные/отказные письма','source/pages/index/otk.jpg'],
+                    ['Сертификат менеджмента качества','source/pages/index/iso.jpg'],
+                    ['Декларация соответствия ГОСТ Р','source/pages/index/dsgost.jpg'],
+                    ['Разработка технических условий','source/pages/index/tu.png'],
+                    ['Оформление протоколов испытаний', 'source/pages/index/pi.jpg']
+                    ]
+                each good in goods
+                    .about__good
+                        img(src=good[1] , alt=good[0]).about__good_img
+                        a(href="XXXX" aria-label=good[0]).about__good_button
+                        .about__good_title #{good[0]}
+            svg(viewBox="0 0 458 272", xmlns='http://www.w3.org/2000/svg').about__svg
+                g.about__svg__blog-line
+                    polyline.about__svg-polyline(points="120 120, 300 154, 174 258, 213 21, 81 44,12 192,300 155, 174 258, 12 192 ")
+                    polyline.about__svg-polyline(points="446 226,432 66, 301 191,446 226 ")
+                    polyline.about__svg-polyline(points="446 226, 335 14, 215 180, 271 57, 446 226 ")
+                g.about__svg__blog-circle
+                    circle.about__svg-circle(cx="12", cy="191", r="10")
+                    circle.about__svg-circle(cx="174", cy="259", r="9")
+                    circle.about__svg-circle(cx="334", cy="13", r="13")
+                    circle.about__svg-circle(cx="445", cy="228", r="8")
+                    circle.about__svg-circle(cx="81", cy="43", r="7")
+                    circle.about__svg-circle(cx="214", cy="19", r="7")
+                    circle.about__svg-circle(cx="115", cy="120", r="7")
+                    circle.about__svg-circle(cx="216", cy="180", r="7")
+                    circle.about__svg-circle(cx="272", cy="57", r="7")
+                    circle.about__svg-circle(cx="299", cy="154", r="7")
+                    circle.about__svg-circle(cx="301", cy="192", r="7")
+                    circle.about__svg-circle(cx="433", cy="65", r="7")
+        section.section.form
+            svg.about__svg2
+                g.about__svg__blog-line
+                    polyline.about__svg-polyline(points="7 153,72 110, 150 107, 234 164, 202 8, 255 67,99 35,202 8")
+                    polyline.about__svg-polyline(points="7 153,99 35, 150 108")
+                g.hero__svg__blog-circle
+                    circle.about__svg-circle(cx="7", cy="153", r="7")
+                    circle.about__svg-circle(cx="72", cy="110", r="4")
+                    circle.about__svg-circle(cx="150", cy="107", r="7")
+                    circle.about__svg-circle(cx="234", cy="164", r="7")
+                    circle.about__svg-circle(cx="202", cy="8", r="7")
+                    circle.about__svg-circle(cx="255", cy="67", r="7")
+                    circle.about__svg-circle(cx="99", cy="35", r="4")
+            .container.container-form
+                h2.container-form__title Узнать стоимость оформления
+                form
+                    .form-row
+                        .form-group.col-md-6
+                            label(for='goods') Наименование продукции
+                            input#goods.form-control(type='text', placeholder='наименование продукции')
+                        .form-group.col-md-6
+                            label(for='code') Код ТН ВЭД продукии
+                            input#code.form-control(type='text', placeholder='код ТН ВЭД ')
+                    .form-group
+                        label(for='description') Краткое описание продукции
+                        input#description.form-control(type='text', placeholder='описание продукции')
+                    .form-row
+                        .form-group.col-md-6
+                            label(for='mail') E-mail
+                            input#mail.form-control(type='email', placeholder='E-mail')
+                        .form-group.col-md-6
+                            label(for='phone') Телефон
+                            input#phone.form-control(type='tel', placeholder='номер телефон')
+                    .form-group
+                        label(for='name') Ф.И.О.
+                        input#name.form-control(type='text', placeholder='Ваше Имя')
+                    button.btn.btn-primary(type='submit') Отправить
+        section.section.map
+            .map__contacts
+                h2.map__contacts_title Контакты
+                ul.contacts__list
+                    each item in ['8(926)639-46-84', '8(985)177-28-21', 'alex-sert2015@mail.ru' , 'Москва, ул. Коминтерна д7.к2']
+                        figure.contacts__list_blog
+                           img(src="XX" ).contact__img
+                           li.contact__item #{item}
+            .container-map
+                #map.yandex-map.ymaps-layers-pane
 
-
-
+    footer.footer
+        section.footer__top
+            nav.footer__side-bar
+                ul.side-bar
+                    each item in ['Главная', 'О нас' , 'Услуги', 'Информация', 'Онлайн заявка' , 'Контакты']
+                        li.navigation__item.navigation__item-footer
+                            a(href="#" aria-label=item).side-bar__link #{item}
+            nav.footer__socials
+                ul.socials-btm
+                    -
+                        var socials = [
+                        ['fb', 'source/pages/index/fb.svg'],
+                        ['vk', 'source/pages/index/vk.svg'],
+                        ['shatsApp' , 'source/pages/index/WhatsApp.svg'],
+                        ['skype' , 'source/pages/index/Skype.svg'],
+                        ['instagram' , 'source/pages/index/Instagram.svg']
+                        ]
+                    each item in socials
+                        li.socials__item_footer
+                            img(src=item[1] , alt=item[0]).socials-link_img
+                            a(href="xxxx" class='socials__link_' + item[0] aria-label=item[0] )
+                        use(xlink:href=item)
+        section.footer__middle
+            .footer__about
+                p.footer__about_text Крона Групп  –  центр сертификации продукции , профессиональный ,
+                    | надежный партнер для участников ВЭД , имеющий опыт сертификации любых видов продукциию.
+            .footer__rights
+                address.footer__rights_contacts
+                    ul.contacts__list_f
+                        -
+                            var contacts = ['alex-sert2015@mail.ru','+7(926)639-46-84', 'г.Москва, ул. Коминтерна, дом7 корпус2 ']
+                        each item in contacts
+                            li.contacts__item-f
+                                .contact-row-f__content #{item}
+        section.footer__bottom
+            .footer__bottom_img
+            .footer__rights_text 2010 Общество с ограниченной ответственность  "Крона Групп"
 
 
 

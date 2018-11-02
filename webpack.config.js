@@ -39,16 +39,17 @@ module.exports = {
             name: 'common'
         }),
         new OptimizeCssAssetsPlugin({
-            cssProcessorOptions: { discardComments: {removeAll: true } }
+            cssProcessorOptions: {discardComments: {removeAll: true}}
         }),
         new StyleLintPlugin({
             configFile: './.stylelintrc'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
-            jQuery: 'jquery'
+            jQuery: 'jquery',
+            '_': 'lodash'
         }),
-        new UglifyJSPlugin()        
+        new UglifyJSPlugin()
     ],
     module: {
         rules: [
@@ -63,7 +64,7 @@ module.exports = {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     publicPath: '../',
-                    use: ['css-loader','sass-loader'],
+                    use: ['css-loader', 'sass-loader'],
                 })
             },
             {
@@ -79,7 +80,7 @@ module.exports = {
                 loader: "eslint-loader",
                 options: {
                     fix: true
-                }            
+                }
             },
             {
                 test: /\.(jpg|png|svg)$/,
@@ -87,7 +88,7 @@ module.exports = {
                 options: {
                     name: 'images/[name].[ext]'
                 }
-            }                                    
+            }
         ]
     }
 };
