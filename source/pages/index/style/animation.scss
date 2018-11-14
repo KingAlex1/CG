@@ -34,3 +34,13 @@
     border-right-color: transparent;
   }
 }
+
+@keyframes moveArrow {
+  from{
+    bottom: 7%;
+  }
+  to{
+    bottom: 5%;
+  }
+
+}

@@ -9,11 +9,19 @@ block content
                 .navigation__title_name Крона групп
                 .navigation__title_desc Центр сертификации продукции
             ul.navigation__tab
-                each item in ['Главная', 'О нас' , 'Услуги', 'Информация', 'Онлайн заявка' , 'Контакты']
-                    li.navigation__item
-                        a(href="#" aria-label=item).side-bar__link #{item}
+                -
+                    var sections = [
 
-    main.main-content
+                    [ "#main" , "Главная", "active" ],
+                    [ "#services", "Услуги"],
+                    [ "#order" , "Онлайн заявка"],
+                    [ "#contacts" , "Контакты"]
+                    ];
+                each item in sections
+                    li.navigation__item
+                        a(href=item[0] class=item[2] aria-label=item[1]).side-bar__link.side-bar__link-top #{item[1]}
+
+    main.main-content#main
         section.section.presentation
             .presentation__info
                 h1.presentation__title Крона Групп
@@ -23,16 +31,17 @@ block content
                     | Если Вам нужен эффективный результат, комплексное решение и оперативность выполнения – позвоните в наш Центр Сертификации.
                     | На нашем сайте Вы можете  Вы можете заполнить предварительную заявку для росчета стоимоти. Не забудь указать обратную информацию для получения ответа.
                 p.line-1.anim-typewriter.presentation__desc Узнайте стоимость on-line или позвоните нам.
-                a(href="XXXXXXX" aria-label="Стоимость").presentation__button Узнать стоимоть
+                a(href="#order" aria-label="Стоимость").presentation__button Узнать стоимоть
             figure.presentation__image
                 .presentation__img
                 .presentation__svg
                     svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewBox='0 0 1374.7 1083.6', style='enable-background:new 0 0 1374.7 1083.6;', xml:space='preserve')
                         path.presentation__svg_cirle(opacity='.05', d='M285.2,170.1c-94.5,8.6-181.2,57.4-235.9,134.8C-34.7,423.6-54.5,621.5,349,879.8\
                       c636.5,407.6,600,9.3,591.9-47.4c-0.8-5.5-1.4-11.1-2-16.6l-34.2-374.1C888.4,262,729.2,129.6,549.4,146L285.2,170.1z')
-        .header__arrow
-            img(src="source/pages/index/arrow.svg", alt="arrow")#header__arrow.header__arrow_img
-        section.section.about
+        a(href="#services").header__arrow_img
+            //img(src="source/pages/index/arrow.svg", alt="arrow")#header__arrow.header__arrow_img
+
+        section.section.about(id="services")
             .about__title
                 .about__title_name что мы оформляем ?
             .about__title_desc Профессианализм и богатый опыт Наших сотрудников позволяем заниматься широким спектором в сфере оформления разрешительной документации
@@ -40,14 +49,14 @@ block content
             .about__goods
                 -
                     var goods =[
-                    ['Сертификат соответствия тех. рглентму ТС', 'source/pages/index/sstrts.jpg' ],
-                    ['Декларации соответствия тех. рглентму ТРТС','source/pages/index/dstrts.jpg'],
-                    ['Добровольные сертификаты соответствия ГОСТ Р','source/pages/index/ssgost.jpg'],
-                    ['Иинформационные/отказные письма','source/pages/index/otk.jpg'],
-                    ['Сертификат менеджмента качества','source/pages/index/iso.jpg'],
-                    ['Декларация соответствия ГОСТ Р','source/pages/index/dsgost.jpg'],
-                    ['Разработка технических условий','source/pages/index/tu.png'],
-                    ['Оформление протоколов испытаний', 'source/pages/index/pi.jpg']
+                    ['Сертификат соответствия тех. рглентму ТС', require('./img/sstrts.jpg') ],
+                    ['Декларации соответствия тех. рглентму ТРТС',require('./img/dstrts.jpg')],
+                    ['Добровольные сертификаты соответствия ГОСТ Р',require('./img/ssgost.jpg')],
+                    ['Иинформационные/отказные письма',require('./img/otk.jpg')],
+                    ['Сертификат менеджмента качества',require('./img/iso.jpg')],
+                    ['Декларация соответствия ГОСТ Р',require('./img/dsgost.jpg')],
+                    ['Разработка технических условий',require('./img/tu.png')],
+                    ['Оформление протоколов испытаний', require('./img/pi.jpg')]
                     ]
                 each good in goods
                     .about__good
@@ -72,7 +81,7 @@ block content
                     circle.about__svg-circle(cx="299", cy="154", r="7")
                     circle.about__svg-circle(cx="301", cy="192", r="7")
                     circle.about__svg-circle(cx="433", cy="65", r="7")
-        section.section.form
+        section.section.form(id="order")
             svg.about__svg2
                 g.about__svg__blog-line
                     polyline.about__svg-polyline(points="7 153,72 110, 150 107, 234 164, 202 8, 255 67,99 35,202 8")
@@ -109,39 +118,46 @@ block content
                         label(for='name') Ф.И.О.
                         input#name.form-control(type='text', placeholder='Ваше Имя')
                     button.btn.btn-primary(type='submit') Отправить
-        section.section.map
+        section.section.map(id="contacts")
             .map__contacts
                 h2.map__contacts_title Контакты
                 ul.contacts__list
-                    each item in ['8(926)639-46-84', '8(985)177-28-21', 'alex-sert2015@mail.ru' , 'Москва, ул. Коминтерна д7.к2']
+                    -
+                        var numbers = [
+                        [require("./img/mobile_phone.png") , '8(926)639-46-84'],
+                        [require("./img/phone.png") , '8(985)177-28-21'],
+                        [require("./img/email.png"), 'alex-sert2015@mail.ru'],
+                        [require("./img/direction.png"), 'Москва, ул. Коминтерна д7.к2']
+                        ]
+                    each item in numbers
                         figure.contacts__list_blog
-                           img(src="XX" ).contact__img
-                           li.contact__item #{item}
+                            img(src=item[0]).contact__img
+                            li.contact__item #{item[1]}
             .container-map
                 #map.yandex-map.ymaps-layers-pane
+        a.btn_up(href="#") вверх
 
     footer.footer
         section.footer__top
             nav.footer__side-bar
                 ul.side-bar
-                    each item in ['Главная', 'О нас' , 'Услуги', 'Информация', 'Онлайн заявка' , 'Контакты']
+                    each item in sections
                         li.navigation__item.navigation__item-footer
-                            a(href="#" aria-label=item).side-bar__link #{item}
+                            a(href=item[0] aria-label=item).side-bar__link #{item[1]}
             nav.footer__socials
                 ul.socials-btm
                     -
                         var socials = [
-                        ['fb', 'source/pages/index/fb.svg'],
-                        ['vk', 'source/pages/index/vk.svg'],
-                        ['shatsApp' , 'source/pages/index/WhatsApp.svg'],
-                        ['skype' , 'source/pages/index/Skype.svg'],
-                        ['instagram' , 'source/pages/index/Instagram.svg']
+                        ['fb', require('./img/fb.svg')],
+                        ['vk', require('./img/vk.svg')],
+                        ['shatsApp' , require('./img/WhatsApp.svg')],
+                        ['skype' , require('./img/Skype.svg')],
+                        ['instagram' , require('./img/Instagram.svg')]
                         ]
                     each item in socials
                         li.socials__item_footer
                             img(src=item[1] , alt=item[0]).socials-link_img
                             a(href="xxxx" class='socials__link_' + item[0] aria-label=item[0] )
-                        use(xlink:href=item)
         section.footer__middle
             .footer__about
                 p.footer__about_text Крона Групп  –  центр сертификации продукции , профессиональный ,

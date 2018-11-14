@@ -1,19 +1,25 @@
+/* global ymaps */
+
 import 'normalize.css';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.scss';
-import './about.scss';
-import './animation.scss';
-import './form.scss';
-import './map.scss';
-import './footer.scss';
+import './style/index.scss';
+import './style/about.scss';
+import './style/animation.scss';
+import './style/form.scss';
+import './style/map.scss';
+import './style/footer.scss';
+import './style/buttom.scss';
+
 
 const $ = require('jquery');
-const _ = require('lodash');
+// const _ = require('lodash');
 const $script = require('scriptjs');
 
 $(document).ready(function () {
 
+  let blockUpPosission = window.innerHeight;
+  let scrollTimeout;
   $script('https://api-maps.yandex.ru/2.1/?lang=ru_RU', function () {
     ymaps.ready(function () {
       let myMap = new ymaps.Map('map', {
@@ -43,26 +49,54 @@ $(document).ready(function () {
       //  - magnifier.rightButton - увеличение области, выделенной правой кнопкой мыши.
         .disable(['drag', 'rightMouseButtonMagnifier', 'scrollZoom']);
     });
-
   });
 
-  console.log('index.js');
+  $('.side-bar__link, .header__arrow_img , .presentation__button').on('click', (e) => {
+    let href = $(e.target).attr('href');
+    let section = $(href);
 
-  let arrow = document.getElementById('header__arrow');
-  let i = arrow.offsetTop;
-  let endPosition = i + 12;
+    $('html, body').animate({
+      scrollTop: section.offset().top - 60,
+    }, 400);
+  });
 
-  function moveBlock() {
-    arrow.style.top = i + 'px';
-    i = i + 0.2;
-    if (i > endPosition) {
-      i = i - 10;
-      arrow.style.top = i + 'px';
-    }
+  $('.btn_up').on('click', () => {
+    $('html, body').animate({
+      scrollTop: 0,
+    }, 400);
+  });
+
+
+  $(window).on('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+
+      if (scrollY > blockUpPosission) {
+        $('.btn_up').slideDown(400);
+      } else {
+        $('.btn_up').slideUp(400);
+      }
+
+      activeNavMenu();
+    }, 100);
+  });
+
+
+  function activeNavMenu() {
+    $('.side-bar__link-top').each(function () {
+
+      let href = $(this).attr('href');
+      let section = $(href);
+
+      let winTop = $(window).scrollTop();
+      let sectioTop = section.offset().top;
+
+      if (winTop > sectioTop - 150) {
+        $('.side-bar__link').removeClass('active').filter(this).addClass('active');
+      }
+    });
   }
 
-  setInterval(moveBlock, 40);
-
-  console.log(_.isEqual(5, 5));
-
 });
+
+

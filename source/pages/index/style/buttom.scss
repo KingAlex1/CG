@@ -1,0 +1,20 @@
+.btn_up{
+  text-decoration: none;
+  display: none;
+  padding: 1rem;
+  border-radius: 20px;
+  background: #007bff;
+  font-weight: 500;
+  color: #ffffff;
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+  z-index: 999999;
+  &:hover{
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 0 10px 0 #000000;
+  }
+}

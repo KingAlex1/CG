@@ -34,5 +34,6 @@ module.exports = {
     "globals": {
         "$": true,
         "jQuery": true,
+        // "ymaps": true
     }
 };
