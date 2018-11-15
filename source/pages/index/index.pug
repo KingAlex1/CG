@@ -18,7 +18,7 @@ block content
                     [ "#contacts" , "Контакты"]
                     ];
                 each item in sections
-                    li.navigation__item
+                    li.navigation__item.navigation__item-header
                         a(href=item[0] class=item[2] aria-label=item[1]).side-bar__link.side-bar__link-top #{item[1]}
 
     main.main-content#main
@@ -141,9 +141,19 @@ block content
         section.footer__top
             nav.footer__side-bar
                 ul.side-bar
-                    each item in sections
+                    -
+                        var blogs = [
+                        ['https://classifikators.ru/tnved', 'Подобрать код ТН ВЭД'],
+                        ['https://classifikators.ru/okpd' , 'Подобрать код ОКПД 2'],
+                        ['https://pub.fsa.gov.ru/ral', 'Реестр аккредитованных лиц'],
+                        ['https://pub.fsa.gov.ru/rds/declaration' , 'Реестр деклараций соответствия'],
+                        ['https://pub.fsa.gov.ru/rss/certificate' , 'Реестр сертификатов сооветствия']
+                        ]
+                    each item in blogs
                         li.navigation__item.navigation__item-footer
                             a(href=item[0] aria-label=item).side-bar__link #{item[1]}
+            .footer__logo
+                img(src=require("./img/logo.png")).footer__logo_img
             nav.footer__socials
                 ul.socials-btm
                     -

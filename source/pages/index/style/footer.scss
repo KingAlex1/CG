@@ -17,12 +17,17 @@
 }
 
 .footer__socials {
+  flex: 1;
 
+}
+
+.footer__side-bar{
+  flex: 1;
 }
 
 .side-bar {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   padding-left: 3rem;
 
 }
@@ -31,12 +36,14 @@
   display: flex;
   flex-flow: row wrap;
   list-style-type: none;
+  justify-content: flex-end;
 
 }
 
 .navigation__item-footer {
   text-decoration: none;
   color: #77838f;
+
 
 }
 
@@ -109,30 +116,27 @@
   position: relative;
   display: inline-block;
   padding-bottom: 1rem;
+  align-items: flex-start;
+  margin: 0;
   :after {
-    position: absolute;
-    bottom: 0;
-    left: 25%;
-    right: 25%;
-    width: 50%;
-    border-bottom: 1px solid slategrey;
-    content: "";
-    align-self: center;
-    transition: all 0.5s linear 0s;
+    display: none;
   }
-  &:hover {
-    :after {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 1px solid slategrey;
-      content: "";
-      align-self: center;
-    }
-  }
+
 }
 
 .contacts__item-f{
   display: flex;
+}
+
+.footer__logo{
+  display: flex;
+  flex: 1;
+  max-width: 30%;
+
+}
+
+.footer__logo_img{
+  width: 100%;
+  height: 60%;
+  margin: auto;
 }

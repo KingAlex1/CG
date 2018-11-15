@@ -20,6 +20,8 @@ $(document).ready(function () {
 
   let blockUpPosission = window.innerHeight;
   let scrollTimeout;
+  let navBlog = $('.navigation');
+
   $script('https://api-maps.yandex.ru/2.1/?lang=ru_RU', function () {
     ymaps.ready(function () {
       let myMap = new ymaps.Map('map', {
@@ -71,6 +73,12 @@ $(document).ready(function () {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
 
+      if (scrollY < navBlog.height() +10 || scrollY > blockUpPosission) {
+        navBlog.slideDown(400);
+      } else if (scrollY > navBlog.height() + 30) {
+        navBlog.slideUp(400);
+      }
+
       if (scrollY > blockUpPosission) {
         $('.btn_up').slideDown(400);
       } else {
@@ -79,6 +87,8 @@ $(document).ready(function () {
 
       activeNavMenu();
     }, 100);
+
+
   });
 
 
