@@ -10,13 +10,17 @@ import './style/form.scss';
 import './style/map.scss';
 import './style/footer.scss';
 import './style/buttom.scss';
+import './style/documents.scss';
+import './style/preloader.scss';
 
+import preloader from './js/preloader';
 
 const $ = require('jquery');
-// const _ = require('lodash');
 const $script = require('scriptjs');
 
 $(document).ready(function () {
+
+  preloader();
 
   let blockUpPosission = window.innerHeight;
   let scrollTimeout;
@@ -73,7 +77,7 @@ $(document).ready(function () {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
 
-      if (scrollY < navBlog.height() +10 || scrollY > blockUpPosission) {
+      if (scrollY < navBlog.height() + 10 || scrollY > blockUpPosission) {
         navBlog.slideDown(400);
       } else if (scrollY > navBlog.height() + 30) {
         navBlog.slideUp(400);
@@ -87,8 +91,6 @@ $(document).ready(function () {
 
       activeNavMenu();
     }, 100);
-
-
   });
 
 
@@ -107,6 +109,51 @@ $(document).ready(function () {
     });
   }
 
+  $('.order__form').submit(function () {
+    $.ajax({
+      type: 'POST',
+      url: 'order/add',
+      data: $(this).serialize(),
+    }).done(function () {
+      alert('Ваш запрос отправлен. Ожидайте , скоро с Вами свяжутся');
+      console.log('dddd');
+    });
+    return false;
+  });
+
+  let btnSubmit = $('.btn-primary'),
+    btnGood = $('#good').val(),
+    btnEmail = $('#email').val(),
+    btnPhone = $('#phone').val(),
+    emptyRow = '',
+    order__form = $('.order__form'),
+    captch = $('.captcha__display');
+
+  btnSubmit.attr('disabled', 'disabled');
+
+
+  order__form.on('input', function () {
+    btnGood = $('#good').val();
+    btnEmail = $('#email').val();
+    btnPhone = $('#phone').val();
+    if (btnGood !== emptyRow && (btnEmail !== emptyRow || btnPhone !== emptyRow)) {
+      btnSubmit.removeAttr('disabled');
+      captch.removeClass('captcha__display');
+
+    } else {
+      btnSubmit.attr('disabled', 'disabled');
+      captch.addClass('captcha__display');
+    }
+  });
+
+  $('.section__list_trigger').on('click', function () {
+    let answer = $(this).next();
+
+    $(this).parent().toggleClass('active__list');
+    $(this).parent().siblings().not($(this)).removeClass('active__list');
+    $('.section__list_content').not(answer).slideUp(400);
+    answer.slideToggle(400);
+  });
 });
 
 

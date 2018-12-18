@@ -1,7 +1,7 @@
 extends ../base
 
 block head
-    title index page
+    title Крона Групп Центр сертификации продцкциb
 block content
     header.section.header
         nav.navigation
@@ -26,10 +26,10 @@ block content
             .presentation__info
                 h1.presentation__title Крона Групп
                 .presentation__desc Крона Групп – центр сертификации продукции, профессиональный,
-                    | надежный партнер для участников ВЭД, имеющий опыт сертификации любых видов продукциию.
+                    | надежный партнер для участников ВЭД, имеющий опыт сертификации любых видов продукции.
                     | Рады предложить Вам полный комплекс услуг по сертификации, декларированию и испытанию продукции и оборудования любой отрасли.
                     | Если Вам нужен эффективный результат, комплексное решение и оперативность выполнения – позвоните в наш Центр Сертификации.
-                    | На нашем сайте Вы можете  Вы можете заполнить предварительную заявку для росчета стоимоти. Не забудь указать обратную информацию для получения ответа.
+                    | На нашем сайте Вы можете  Вы можете заполнить предварительную заявку для просчета стоимости. Не забудьте указать обратную информацию для получения ответа.
                 p.line-1.anim-typewriter.presentation__desc Узнайте стоимость on-line или позвоните нам.
                 a(href="#order" aria-label="Стоимость").presentation__button Узнать стоимоть
             figure.presentation__image
@@ -44,7 +44,7 @@ block content
         section.section.about(id="services")
             .about__title
                 .about__title_name что мы оформляем ?
-            .about__title_desc Профессианализм и богатый опыт Наших сотрудников позволяем заниматься широким спектором в сфере оформления разрешительной документации
+            .about__title_desc Профессионализм и богатый опыт Наших сотрудников позволяет оказывать широкий спектр услуг
 
             .about__goods
                 -
@@ -81,7 +81,24 @@ block content
                     circle.about__svg-circle(cx="299", cy="154", r="7")
                     circle.about__svg-circle(cx="301", cy="192", r="7")
                     circle.about__svg-circle(cx="433", cy="65", r="7")
+        section.section.documents
+            .documents__section
+                h2.section__tittle Наши приемущества
+                ul.section__list
+                    -
+                        var items = [{article:'Широкий спектр услуг' , desc : 'Широкий выбор оформляемых документов. Не нужно искать десятки компаний, все документы можно оформить в одном месте.'},
+                        {article:'Сроки оформления' , desc:'Оперативное оформление и регистрация документов, сжатые сроки выполнения работ. При необходимости возможна регистрация документов в день обращения.' },
+                        {article: 'Лояльный подход', desc :'Оформление документов в соответствии с потребностями и желаниями клиента. Грамотная консультация по необходимым требованиям относительно Вашей продукции или услуг.'},
+                        {article: 'Профессиональные специалисты' , desc: 'Наши эксперты по сертификации обладают необходимой квалификацией в сфере подтверждения соответствия и имеют необходимое высшее техническое образованием.' },
+                        {article:'Регистрация документов', desc: 'Выдаваемые документы включены в реестры ФСА в соответствии с действующим законодательством. Мы являемся членом Таможенного союза и включаем в себя все области аккредитации.'}]
+                    each item in items
+                        li.section__list_item
+                            a.section__list_trigger #{item.article}
+                            .section__list_content #{item.desc}
+
+
         section.section.form(id="order")
+
             svg.about__svg2
                 g.about__svg__blog-line
                     polyline.about__svg-polyline(points="7 153,72 110, 150 107, 234 164, 202 8, 255 67,99 35,202 8")
@@ -96,27 +113,28 @@ block content
                     circle.about__svg-circle(cx="99", cy="35", r="4")
             .container.container-form
                 h2.container-form__title Узнать стоимость оформления
-                form
+                form.order__form(method="POST")
                     .form-row
                         .form-group.col-md-6
-                            label(for='goods') Наименование продукции
-                            input#goods.form-control(type='text', placeholder='наименование продукции')
+                            label(for='good') Наименование продукции
+                            input#good.form-control(name="good" type='text', placeholder='наименование продукции')
                         .form-group.col-md-6
                             label(for='code') Код ТН ВЭД продукии
-                            input#code.form-control(type='text', placeholder='код ТН ВЭД ')
+                            input#code.form-control(name="code" type='text', placeholder='код ТН ВЭД ')
                     .form-group
                         label(for='description') Краткое описание продукции
-                        input#description.form-control(type='text', placeholder='описание продукции')
+                        textarea#description.form-control( rows="4" name="description" type='text', placeholder='описание продукции')
                     .form-row
                         .form-group.col-md-6
-                            label(for='mail') E-mail
-                            input#mail.form-control(type='email', placeholder='E-mail')
+                            label(for='email') E-mail
+                            input#email.form-control(name="email" type='email', placeholder='E-mail')
                         .form-group.col-md-6
                             label(for='phone') Телефон
-                            input#phone.form-control(type='tel', placeholder='номер телефон')
+                            input#phone.form-control(name="phone" type='tel', placeholder='номер телефон')
                     .form-group
                         label(for='name') Ф.И.О.
-                        input#name.form-control(type='text', placeholder='Ваше Имя')
+                        input#name.form-control(name="name" type='text', placeholder='Ваше Имя')
+                        .g-recaptcha.captcha__display(data-sitekey="6LcUPIEUAAAAAA5jB7cXNeP9Vyvks8l1QPSimMDS")
                     button.btn.btn-primary(type='submit') Отправить
         section.section.map(id="contacts")
             .map__contacts
@@ -183,6 +201,13 @@ block content
         section.footer__bottom
             .footer__bottom_img
             .footer__rights_text 2010 Общество с ограниченной ответственность  "Крона Групп"
+    .preloader
+        .preloader__spinner
+            .preloader__animation
+            .preloader__percents 0%
+
+
+
 
 
 

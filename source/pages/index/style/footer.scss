@@ -63,7 +63,6 @@
 }
 
 .footer__about_text {
-  padding: 14px;
   color: #828286;
 }
 
@@ -118,6 +117,7 @@
   padding-bottom: 1rem;
   align-items: flex-start;
   margin: 0;
+  padding: 0;
   :after {
     display: none;
   }
@@ -131,8 +131,6 @@
 .footer__logo{
   display: flex;
   flex: 1;
-  max-width: 30%;
-
 }
 
 .footer__logo_img{
