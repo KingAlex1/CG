@@ -1,0 +1,29 @@
+// adjustment variables
+$container-width:960px;
+$body-font:'fira_sansregular', Helvetica, serif;
+
+//colors
+
+$blue:#fff ;
+$grey:#fff ;
+
+//layouts
+@import "../../../fonts/stylesheet";
+@import "../../../components/_mics/mixins";
+@import "../../../components/_mics/adjustment";
+@import "~normalize.css";
+
+//styles
+@import "sections/about";
+@import "sections/animation";
+@import "sections/buttom";
+@import "sections/documents";
+@import "sections/form";
+@import "sections/index";
+@import "sections/info";
+@import "sections/map";
+@import "sections/preloader";
+
+//media
+
+

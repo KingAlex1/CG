@@ -1,8 +1,10 @@
+@import "../../../fonts/stylesheet";
+@import "../../_mics/mixins";
+
 .footer {
   display: flex;
   flex-flow: column wrap;
   padding: 1.5rem 2rem 1rem 2rem;
-  //background-color: rgba(0, 0, 0, 0.05);
   box-shadow: 0 9px 8px -9px #000000 inset;
 }
 
@@ -10,6 +12,11 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+
+  @include phones {
+    text-align: center;
+    margin: auto;
+  }
 }
 
 .navigation__item {
@@ -17,18 +24,19 @@
 }
 
 .footer__socials {
-  flex: 1;
-
+  @include phones {
+    display: none;
+  }
 }
 
-.footer__side-bar{
-  flex: 1;
+.footer__side-bar {
+
 }
 
 .side-bar {
   display: flex;
   flex-flow: column wrap;
-  padding-left: 3rem;
+  padding: 0;
 
 }
 
@@ -43,7 +51,9 @@
 .navigation__item-footer {
   text-decoration: none;
   color: #77838f;
-
+  @include phones{
+    text-decoration: underline;
+  }
 
 }
 
@@ -54,16 +64,19 @@
   border-bottom-width: thin;
   border-bottom-color: rgba(0, 0, 0, 0.1);
   border-bottom-style: solid;
+  padding-top: 1rem;
 }
 
 .footer__about {
-  padding: 0.5rem 0 0.5rem 3rem;
-  flex: 2.5;
-
+  flex: 1;
 }
 
 .footer__about_text {
   color: #828286;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .contact-row-f__content {
@@ -71,16 +84,20 @@
 }
 
 .footer__rights {
-  flex: 1.5;
-  padding: 0.5rem 0 3rem 1rem;
+  flex: 1;
   text-align: right;
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .contacts__list_f {
-  display:flex;
+  display: flex;
   flex-direction: column;
   list-style-type: none;
   align-items: flex-end;
+  padding: 0;
 }
 
 .footer__bottom {
@@ -88,11 +105,6 @@
   justify-content: center;
 
 }
-
-//.socials-btm{
-//  width: 2.5rem;
-//  height: 2.5rem;
-//}
 
 .socials__item_footer {
   width: 2rem;
@@ -109,6 +121,7 @@
 .footer__rights_text {
   padding: 0 1rem 1rem 1rem;
   color: #828286;
+  text-align: center;
 }
 
 .navigation__item-footer {
@@ -121,19 +134,22 @@
   :after {
     display: none;
   }
-
 }
 
-.contacts__item-f{
+.contacts__item-f {
   display: flex;
 }
 
-.footer__logo{
+.footer__logo {
+  //  @include roboto();
+  color: #377dff;
+  justify-content: center;
+  text-transform: uppercase;
   display: flex;
-  flex: 1;
+  margin: auto;
 }
 
-.footer__logo_img{
+.footer__logo_img {
   width: 100%;
   height: 60%;
   margin: auto;

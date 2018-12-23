@@ -4,8 +4,12 @@
   background-size: cover;
   height: 100vh;
   position: relative;
-
+  box-shadow: inset 0 0 10px #000000;
   background-attachment: fixed;
+
+  @include phones {
+    background-position-x: center;
+  }
 
 }
 
@@ -18,6 +22,15 @@
   background: rgba(47, 50, 52, .25);
   color: white;
   padding: 5% 7% 0 2%;
+
+  @include phones {
+    right: 0;
+    padding: 5% 7% 0 7%;
+  }
+
+  @include tablets {
+    padding: 5% 7% 0 7%;
+  }
 }
 
 .section__list {
@@ -44,15 +57,17 @@
   cursor: pointer;
 
 }
+
 .section__list_content {
-  //  padding: 1rem 3rem 1rem 1rem;
+
   text-transform: initial;
   font-weight: 300;
   overflow: hidden;
   display: none;
 
 }
-//////////////
+
+/////////////
 
 .section__list_item.active__list .section__list_trigger:before {
 

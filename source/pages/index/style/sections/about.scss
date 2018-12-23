@@ -21,6 +21,14 @@
   width: 33vw;
   text-align: center;
   color: #828286;
+
+  @include phones {
+    width: 90vw;
+  }
+
+  @include tablets {
+    width: 60vw;
+  }
 }
 
 .about__goods {
@@ -33,7 +41,7 @@
 .about__good {
   display: flex;
   flex-direction: column;
-  flex: 1 1 200px;
+  flex: 1 1 400px;
   padding: 10px;
   margin: 10px;
   justify-content: space-around;

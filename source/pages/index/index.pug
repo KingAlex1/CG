@@ -1,11 +1,11 @@
 extends ../base
 
 block head
-    title Крона Групп Центр сертификации продцкциb
+    title Крона Групп Центр сертификации продцкции
 block content
     header.section.header
         nav.navigation
-            figure.navigation__title
+            .navigation__title
                 .navigation__title_name Крона групп
                 .navigation__title_desc Центр сертификации продукции
             ul.navigation__tab
@@ -154,57 +154,7 @@ block content
             .container-map
                 #map.yandex-map.ymaps-layers-pane
         a.btn_up(href="#") вверх
-
-    footer.footer
-        section.footer__top
-            nav.footer__side-bar
-                ul.side-bar
-                    -
-                        var blogs = [
-                        ['https://classifikators.ru/tnved', 'Подобрать код ТН ВЭД'],
-                        ['https://classifikators.ru/okpd' , 'Подобрать код ОКПД 2'],
-                        ['https://pub.fsa.gov.ru/ral', 'Реестр аккредитованных лиц'],
-                        ['https://pub.fsa.gov.ru/rds/declaration' , 'Реестр деклараций соответствия'],
-                        ['https://pub.fsa.gov.ru/rss/certificate' , 'Реестр сертификатов сооветствия']
-                        ]
-                    each item in blogs
-                        li.navigation__item.navigation__item-footer
-                            a(href=item[0] aria-label=item).side-bar__link #{item[1]}
-            .footer__logo
-                img(src=require("./img/logo.png")).footer__logo_img
-            nav.footer__socials
-                ul.socials-btm
-                    -
-                        var socials = [
-                        ['fb', require('./img/fb.svg')],
-                        ['vk', require('./img/vk.svg')],
-                        ['shatsApp' , require('./img/WhatsApp.svg')],
-                        ['skype' , require('./img/Skype.svg')],
-                        ['instagram' , require('./img/Instagram.svg')]
-                        ]
-                    each item in socials
-                        li.socials__item_footer
-                            img(src=item[1] , alt=item[0]).socials-link_img
-                            a(href="xxxx" class='socials__link_' + item[0] aria-label=item[0] )
-        section.footer__middle
-            .footer__about
-                p.footer__about_text Крона Групп  –  центр сертификации продукции , профессиональный ,
-                    | надежный партнер для участников ВЭД , имеющий опыт сертификации любых видов продукциию.
-            .footer__rights
-                address.footer__rights_contacts
-                    ul.contacts__list_f
-                        -
-                            var contacts = ['alex-sert2015@mail.ru','+7(926)639-46-84', 'г.Москва, ул. Коминтерна, дом7 корпус2 ']
-                        each item in contacts
-                            li.contacts__item-f
-                                .contact-row-f__content #{item}
-        section.footer__bottom
-            .footer__bottom_img
-            .footer__rights_text 2010 Общество с ограниченной ответственность  "Крона Групп"
-    .preloader
-        .preloader__spinner
-            .preloader__animation
-            .preloader__percents 0%
+        include ../../components/footer/footer
 
 
 

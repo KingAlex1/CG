@@ -1,17 +1,10 @@
 /* global ymaps */
 
-import 'normalize.css';
+
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './style/index.scss';
-import './style/about.scss';
-import './style/animation.scss';
-import './style/form.scss';
-import './style/map.scss';
-import './style/footer.scss';
-import './style/buttom.scss';
-import './style/documents.scss';
-import './style/preloader.scss';
+import './style/main.scss';
+import '../../components/footer/index.js';
 
 import preloader from './js/preloader';
 

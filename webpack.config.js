@@ -8,6 +8,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
+
 const PATHS = {
     source: path.join(__dirname, 'source'),
     build: path.join(__dirname, 'build')
@@ -82,6 +83,14 @@ module.exports = {
                     fix: true
                 }
             },
+
+            {
+                test: /\.(eot|ttf|woff|woff2)$/,
+                loader: 'url-loader?limit=100000',
+                options: {
+                    name: 'fonts/[name].[ext]'
+                }
+            },
             {
                 test: /\.(jpg|png|svg)$/,
                 loader: 'file-loader',
@@ -89,13 +98,6 @@ module.exports = {
                     name: 'image/[name].[ext]'
                 }
             },
-            {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader:'file-loader',
-                options:{
-                    name:'fonts/[name].[ext]'
-                }
-            }
         ]
     }
 };

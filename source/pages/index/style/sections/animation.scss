@@ -7,6 +7,9 @@
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
+  @include phones{
+   display: none;
+  }
 }
 
 .anim-typewriter {
@@ -20,6 +23,8 @@
   }
   to {
     width: 28em;
+
+
   }
 }
 
