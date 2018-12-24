@@ -69,11 +69,15 @@ $(document).ready(function () {
   $(window).on('scroll', () => {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-
-      if (scrollY < navBlog.height() + 10 || scrollY > blockUpPosission) {
+      console.log(blockUpPosission);
+      if (scrollY > blockUpPosission) {
         navBlog.slideDown(400);
-      } else if (scrollY > navBlog.height() + 30) {
-        navBlog.slideUp(400);
+      } else if(scrollY < navBlog.height() +30){
+        navBlog.fadeIn();
+      } else {
+        navBlog.fadeOut(400);
+
+
       }
 
       if (scrollY > blockUpPosission) {

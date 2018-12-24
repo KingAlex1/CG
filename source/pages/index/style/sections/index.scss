@@ -27,6 +27,10 @@
   }
 }
 
+.navigation__active{
+  position: fixed;
+}
+
 .navigation__title {
   @include roboto();
   display: flex;
