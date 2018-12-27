@@ -117,17 +117,17 @@ block content
                     .form-row
                         .form-group.col-md-6
                             label(for='good') Наименование продукции
-                            input#good.form-control(name="good" type='text', placeholder='наименование продукции')
+                            input#good.form-control(name="good" type='text', placeholder='наименование продукции' required)
                         .form-group.col-md-6
                             label(for='code') Код ТН ВЭД продукии
-                            input#code.form-control(name="code" type='text', placeholder='код ТН ВЭД ')
+                            input#code.form-control(name="code" type='number', placeholder='код ТН ВЭД' maxlength="14")
                     .form-group
                         label(for='description') Краткое описание продукции
                         textarea#description.form-control( rows="4" name="description" type='text', placeholder='описание продукции')
                     .form-row
                         .form-group.col-md-6
                             label(for='email') E-mail
-                            input#email.form-control(name="email" type='email', placeholder='E-mail')
+                            input#email.form-control(name="email" type='email', placeholder='E-mail' autocomplete="on")
                         .form-group.col-md-6
                             label(for='phone') Телефон
                             input#phone.form-control(name="phone" type='tel', placeholder='номер телефон')
@@ -153,7 +153,7 @@ block content
                             li.contact__item #{item[1]}
             .container-map
                 #map.yandex-map.ymaps-layers-pane
-        a.btn_up(href="#") вверх
+        a.btn_up.material-icons(href="#") arrow_upward
         include ../../components/footer/footer
 
 

@@ -3,8 +3,10 @@
 
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'material-design-icons/iconfont/material-icons.css';
 import './style/main.scss';
 import '../../components/footer/index.js';
+
 
 import preloader from './js/preloader';
 
@@ -69,13 +71,13 @@ $(document).ready(function () {
   $(window).on('scroll', () => {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => {
-      console.log(blockUpPosission);
+
       if (scrollY > blockUpPosission) {
         navBlog.slideDown(400);
-      } else if(scrollY < navBlog.height() +30){
-        navBlog.fadeIn();
+      } else if (scrollY < navBlog.height() + 30) {
+        navBlog.fadeIn(400);
       } else {
-        navBlog.fadeOut(400);
+        navBlog.fadeOut(200);
 
 
       }
@@ -111,9 +113,17 @@ $(document).ready(function () {
       type: 'POST',
       url: 'order/add',
       data: $(this).serialize(),
-    }).done(function () {
-      alert('Ваш запрос отправлен. Ожидайте , скоро с Вами свяжутся');
-      console.log('dddd');
+    }).done(function (data) {
+      let info = JSON.parse(data);
+      console.log(info[1]);
+      if (info[1]) {
+        btnSubmit.attr('disabled', 'disabled');
+        captch.addClass('captcha__display');
+        $('.order__form').trigger('reset');
+      }
+      alert(info[0]);
+
+
     });
     return false;
   });
