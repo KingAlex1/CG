@@ -48,3 +48,13 @@ const imgs = imgPaths.toArray();
 export default () => {
   loadImages(imgs);
 };
+
+
+
+
+
+
+
+
+
+

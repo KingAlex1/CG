@@ -1,9 +1,4 @@
-/* global ymaps */
-
-
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'material-design-icons/iconfont/material-icons.css';
+import 'normalize.css';
 import './style/main.scss';
 import '../../components/footer/index.js';
 
@@ -11,156 +6,86 @@ import '../../components/footer/index.js';
 import preloader from './js/preloader';
 
 const $ = require('jquery');
-const $script = require('scriptjs');
+
 
 $(document).ready(function () {
 
   preloader();
 
-  let blockUpPosission = window.innerHeight;
-  let scrollTimeout;
-  let navBlog = $('.navigation');
+  // карусель
 
-  $script('https://api-maps.yandex.ru/2.1/?lang=ru_RU', function () {
-    ymaps.ready(function () {
-      let myMap = new ymaps.Map('map', {
-        center: [55.76, 37.64],
-        zoom: 10,
-        controls: [],
-      });
+  $('.info__right-item-info').on('click', function () {
+    let article = $(this).next();
+    $('.info__right-item-desc').not(article).slideUp(300);
+    article.slideDown(300);
 
-      let myPlacemark = new ymaps.Placemark([55.86, 37.67], {
-        balloonContentBody: [
-          '<address>',
-          '<strong>Офис Крона Групп в Москве</strong>',
-          '<br/>',
-          'Адрес: 129327, Москва, ул. Коминтерна , 7к2',
-          '<br/>',
-          '</address>',
-        ].join(''),
-      }, {
-        preset: 'islands#redDotIcon',
-      });
+    let arrow = $(this).children('.triangle');
+    $('.triangle').not(arrow).removeClass('active_triangle');
+    arrow.addClass('active_triangle');
 
-      myMap.geoObjects.add(myPlacemark);
-
-      myMap.behaviors
-      // Отключаем часть включенных по умолчанию поведений:
-      //  - drag - перемещение карты при нажатой левой кнопки мыши;
-      //  - magnifier.rightButton - увеличение области, выделенной правой кнопкой мыши.
-        .disable(['drag', 'rightMouseButtonMagnifier', 'scrollZoom']);
-    });
   });
 
-  $('.side-bar__link, .header__arrow_img , .presentation__button').on('click', (e) => {
-    let href = $(e.target).attr('href');
-    let section = $(href);
+  // slider
 
-    $('html, body').animate({
-      scrollTop: section.offset().top - 60,
-    }, 400);
-  });
+  const duration = 500;
+  let counter = 1;
+  let inProgress = false;
 
-  $('.btn_up').on('click', () => {
-    $('html, body').animate({
-      scrollTop: 0,
-    }, 400);
-  });
+  const moveSlides = (container, direction) => {
 
+    let items = container.find('.slider__block');
+    let activeItem = items.filter('.slider__active');
+    let strafeTopPercents = direction === 'right' ? 100 : -100;
 
-  $(window).on('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-
-      if (scrollY > blockUpPosission) {
-        navBlog.slideDown(400);
-      } else if (scrollY < navBlog.height() + 30) {
-        navBlog.fadeIn(400);
-      } else {
-        navBlog.fadeOut(200);
-
-
-      }
-
-      if (scrollY > blockUpPosission) {
-        $('.btn_up').slideDown(400);
-      } else {
-        $('.btn_up').slideUp(400);
-      }
-
-      activeNavMenu();
-    }, 100);
-  });
-
-
-  function activeNavMenu() {
-    $('.side-bar__link-top').each(function () {
-
-      let href = $(this).attr('href');
-      let section = $(href);
-
-      let winTop = $(window).scrollTop();
-      let sectioTop = section.offset().top;
-
-      if (winTop > sectioTop - 150) {
-        $('.side-bar__link').removeClass('active').filter(this).addClass('active');
-      }
-    });
-  }
-
-  $('.order__form').submit(function () {
-    $.ajax({
-      type: 'POST',
-      url: 'order/add',
-      data: $(this).serialize(),
-    }).done(function (data) {
-      let info = JSON.parse(data);
-      console.log(info[1]);
-      if (info[1]) {
-        btnSubmit.attr('disabled', 'disabled');
-        captch.addClass('captcha__display');
-        $('.order__form').trigger('reset');
-      }
-      alert(info[0]);
-
-
-    });
-    return false;
-  });
-
-  let btnSubmit = $('.btn-primary'),
-    btnGood = $('#good').val(),
-    btnEmail = $('#email').val(),
-    btnPhone = $('#phone').val(),
-    emptyRow = '',
-    order__form = $('.order__form'),
-    captch = $('.captcha__display');
-
-  btnSubmit.attr('disabled', 'disabled');
-
-
-  order__form.on('input', function () {
-    btnGood = $('#good').val();
-    btnEmail = $('#email').val();
-    btnPhone = $('#phone').val();
-    if (btnGood !== emptyRow && (btnEmail !== emptyRow || btnPhone !== emptyRow)) {
-      btnSubmit.removeAttr('disabled');
-      captch.removeClass('captcha__display');
-
-    } else {
-      btnSubmit.attr('disabled', 'disabled');
-      captch.addClass('captcha__display');
+    if (counter >= items.length) {
+      counter = 0;
     }
+
+    const reqItem = items.eq(counter);
+
+    if (direction === 'right') {
+      items.not(activeItem).css('left', '-100%');
+    } else if (direction === 'left') {
+      items.not(activeItem).css('left', '100%');
+    }
+
+    activeItem.animate({
+      opacity: 0,
+      left: `${strafeTopPercents}%`,
+    }, 3000);
+
+    reqItem.animate({
+      left: 0,
+      opacity: 1,
+    }, 3000, function () {
+      activeItem.removeClass('slider__active').css('left', `${-strafeTopPercents}%`);
+      $(this).addClass('slider__active');
+      inProgress = false;
+    });
+  };
+
+  $('.slider__button-right').on('click', function () {
+    if (inProgress) return;
+    inProgress = true;
+    moveSlides($('.slider__container'), 'right');
+    counter++;
+    clearInterval(sliderLoop);
+  });
+  $('.slider__button-left').on('click', function () {
+    if (inProgress) return;
+    inProgress = true;
+    moveSlides($('.slider__container'), 'left');
+    counter++;
+    clearInterval(sliderLoop);
   });
 
-  $('.section__list_trigger').on('click', function () {
-    let answer = $(this).next();
+  let sliderLoop = setInterval(function () {
+    if (inProgress) return;
+    inProgress = true;
+    moveSlides($('.slider__container'), 'right');
+    counter++;
+  }, 2000);
 
-    $(this).parent().toggleClass('active__list');
-    $(this).parent().siblings().not($(this)).removeClass('active__list');
-    $('.section__list_content').not(answer).slideUp(400);
-    answer.slideToggle(400);
-  });
 });
 
 

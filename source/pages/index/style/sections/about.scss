@@ -1,90 +1,87 @@
 .about {
+
+}
+
+.about__list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  flex-direction: row;
+  margin: 104px -15px 110px - 15px;
+
 }
 
-.about__title_name {
-  align-self: center;
-  padding: 1rem 2rem;
-  color: #377dff;
-  background-color: rgba(55, 125, 255, 0.1);
-  font-weight: bold;
-  border-radius: 30px;
+.about__item {
+  background-color: $minty;
+  width: 380px;
+  height: 250px;
+  margin: 0 15px;
+  background-size: cover;
+  position: relative;
+
 }
 
-.about__title_desc {
-  padding: 1rem;
-  font-size: 1.2rem;
-  width: 33vw;
-  text-align: center;
-  color: #828286;
-
-  @include phones {
-    width: 90vw;
-  }
-
-  @include tablets {
-    width: 60vw;
-  }
-}
-
-.about__goods {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  padding: 2rem;
-}
-
-.about__good {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 400px;
-  padding: 10px;
-  margin: 10px;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-}
-
-.about__good_img {
-  margin: 10px;
-  width: 100px;
-  height: 150px;
-  z-index: 999;
-  &:hover {
-    transform: scale(1.2, 1.1);
-    transition: all 0.5s ease-in-out;
-  }
-}
-
-.about__good_title {
-  color: #828286;
-}
-
-.about__svg {
-  width: 40vw;
-  //height: 40vh;
-  opacity: .1;
+.about__img {
   position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  visibility: hidden;
+}
+
+.about__item-pics {
+  height: 100%;
+}
+
+.about__item-pic1 {
+  background-image: url("../img/laptop.png");
+  &:hover {
+    transform: translate(-10px, -10px);
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/laptop.png");
+    .about__img {
+      visibility: visible;
+    }
+
+  }
+
+}
+
+.about__item-pic2 {
+  background-image: url("../img/headphone.png");
+  &:hover {
+    transform: translate(-10px, -10px);
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/headphone.png");
+    .about__img {
+      visibility: visible;
+    }
+  }
+}
+
+.about__item-pic3 {
+  background-image: url("../img/bush.png");
+  &:hover {
+    transform: translate(-10px, -10px);
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/bush.png");
+    .about__img {
+      visibility: visible;
+    }
+  }
+}
+
+.about__img-pic {
   display: block;
-  left: 3rem;
-  padding-top: 25vh;
+  background-image: url("../img/USERS.png");
+  width: 32px;
+  height: 23px;
+  margin: 0 auto;
+
 }
 
-.about__svg__blog-line {
-  fill: none;
+.about__img-title {
+  display: inline-block;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
-.about__svg-polyline {
-  stroke: black;
-  fill: none;
-  stroke-width: 1px;
-}
 
-.about__svg-circle {
-  stroke: black;
-  fill: black;
-}

@@ -1,4 +1,5 @@
-new project Crona Group
+new project Mogo
 
 webpack
+
 

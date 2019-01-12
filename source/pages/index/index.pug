@@ -1,160 +1,323 @@
 extends ../base
 
 block head
-    title Крона Групп Центр сертификации продцкции
+    title Mogo
 block content
-    header.section.header
-        nav.navigation
-            .navigation__title
-                .navigation__title_name Крона групп
-                .navigation__title_desc Центр сертификации продукции
-            ul.navigation__tab
+    .wrapper
+        .main-content
+            header.header
+                .container
+                    .menu
+                        .title
+                            .title__name MoGo
+                        .navigation
+                            ul.navigation__list
+                                - var list = [['#about' , 'about'],[ '#service', 'service'] , ['#work' , 'work'], ['#blog', 'blog'] , ['#contact', 'contact']]
+                                each item in list
+                                    li.navigation__item
+                                        a(href=item[0] ).navigation__link #{item[1]}
+                                - var pics = [['#trolley' , 'trolley'], ['#search' , 'search']]
+                                each pic in pics
+                                    li(class="navigation__item-" + pic[1]).navigation__item
+                                        a(href=pic[0] class=pic[1])
+                    hgroup.section__title
+                        h2.section__title-desc Creative Template
+                        h1.section__title-main Welcome to mogo
+                    .section__button
+                        a(href="#").section__buttton-link Learn more
+                    .section__slider
+                        ul.slider__list
+                            - var list = [['01', 'intro'],['02', 'work'] , ['03','about'], ['04', 'contacts']]
+                            each item in list
+                                li.slider__item
+                                    .slider__item-number #{item[0]}
+                                    .slider__item-desc #{item[1]}
+            section.about
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first What we do
+                            h2.title-second Story about as
+                        .title-line
+                        .description__info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum odio porro quae quaerat sint, vitae voluptatum. Ad deleniti esse impedit nesciunt numquam quo voluptas voluptates. Accusamus ea odio sapiente sit.
+                    ul.about__list
+                        - var pictures = ['pic1','pic2','pic3']
+                        each picture in pictures
+                            .about__item
+                                li(class="about__item-" + picture).about__item-pics
+                                    .about__img
+                                        .about__img-pic
+                                        .about__img-title Super Team
+            section.results
+                .container
+                    ul.results__list
+                        - var results = [['42','web design project'] , ['123', 'happy client'] , ['15', 'award winner'] , ['99' , 'cup of coffee'] , ['24' , 'members']]
+                        each result in results
+                            li.results__item
+                                .results__item-number #{result[0]}
+                                .results__item-desc #{result[1]}
+            section.service
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first We work with
+                            h2.title-second Amazing services
+                        .title-line
+                    ul.service__list
+                        -
+                            var service = [
+                            ['photo','Photography' , 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do consectetur adipiscing elit' ],
+                            ['web','Web Design','Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm consectetur adipiscing elit'],
+                            ['creative','Creativity','Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem consectetur adipiscing elit'],
+                            ['seo','seo','Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm consectetur adipiscing elit'],
+                            ['css','Css/Html','Dolor sit amet, consectetur adipiscing elit, sed do eiusmod tem consectetur adipiscing elit'],
+                            ['digital','digital','Sit amet, consectetur adipiscing elit, sed do eiusmod tempor consectetur adipiscing elit.']
+                            ]
+                        each item in service
+                            li.service__item
+                                .service__item-img(class = "service__item-img-" + item[0] )
+                                .service__item-info
+                                    .service__item-title #{item[1]}
+                                    .service__item-desc #{item[2]}
+            section.devices
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first.title-first-pic For all devices
+                            h2.title-second unique design
+                        .title-line
+                    .devices__phone
+                        .devices__small-phone
+            section.ourService
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first Service
+                            h2.title-second What we do
+                        .title-line
+                        .description__info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum odio porro quae quaerat sint, vitae voluptatum. Ad deleniti esse impedit nesciunt numquam quo voluptas voluptates. Accusamus ea odio sapiente sit.
+                    .info
+                        .info__left
+                            img(src=require('./img/men.png')).info__left-pic
+                        ul.info__right
+                            -
+                                var items = [
+                                ['photo','Photography', 'Lorem ipsum dolor sit amet, consectetur  Lorem ipsum dolor sit amet,consectet Lorem ipsum dolor sit amet, consecte consectet Lorem ipsum dolor sit amet, consecte consectet Lorem ipsum dolor sit amet, consecte consectet Lorem ipsum dolor sit amet, consecte consectet Lorem ipsum dolor sit amet, consecte consectet Lorem ipsum dolor sit amet, consecte consectet Lorem ipsum dolor sit amet, consectet Lorem ipsum dolor sit amet, consectet adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit'   ],
+                                ['creative','creativity','Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit'],
+                                [ 'web','web design','Lorem ipsum dolor sit amet, consectetur adipiscing elit,Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet, consectetur adipiscing elit']
+                                ]
+                            each item in items
+                                li.info__right-item
+                                    .info__right-item-info
+                                        .info__right-item-pic(class = "info__right-item-" + item[0] )
+                                        .info__right-item-title #{item[1]}
+
+                                    .info__right-item-desc #{item[2]}
+            section.comments
+                .container
+                    .slider
+                        button.slider__button.slider__button-left
+                        .slider__container
+                            .slider__block.slider__active
+                                img(src=require("./img/SPEECH 4.png")).slier__block-img
+                                .slider__block-info
+                                    .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
+                                    .slider__block-sign Jon Dor
+                            .slider__block
+                                img(src=require("./img/SPEECH 4.png")).slier__block-img
+                                .slider__block-info
+                                    .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
+                                    .slider__block-sign Jon Dor
+                            .slider__block
+                                img(src=require("./img/SPEECH 4.png")).slier__block-img
+                                .slider__block-info
+                                    .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
+                                    .slider__block-sign Jon Dor
+                        button.slider__button.slider__button-right
+            section.team
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first Who we are
+                            h2.title-second Meet our team
+                        .description__info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum odio porro quae quaerat sint, vitae voluptatum. Ad deleniti esse impedit nesciunt numquam quo voluptas voluptates. Accusamus ea odio sapiente sit.
+                    ul.team__list
+                        -
+                            var team = [
+                            ['pic1','Matthew Dix','Graphic Design'],
+                            ['pic2','Christopher Campbell','Branding/UX design'],
+                            ['pic3','Michael Fertig ','Developer']
+                            ]
+                        each item in team
+                            li(class = "team__item" + item[0])
+                                ul.socials
+                                    -
+                                        var socials = [
+                                        ['fb' , 'https://www.facebook.com/'],
+                                        ['tw','https://twitter.com/'],
+                                        ['pt' , 'https://www.pinterest.ru/'],
+                                        ['inst' ,'https://www.instagram.com/' ]
+                                        ]
+                                each social in socials
+                                    li(class=social[0]).socials__item
+                                        a(href=social[1]).socials__link
+                            .team__item-info
+                                .team__item-name
+                                .team__item-position
+            section.logos
+                .container
+                    img(src=require('./img/logos.png')).logos__picture
+            section.work
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first What we do
+                            h2.title-second some of our work
+                        .description__info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum odio porro quae quaerat sint, vitae voluptatum. Ad deleniti esse impedit nesciunt numquam quo voluptas voluptates. Accusamus ea odio sapiente sit.
+            section.pictures
+                ul.pictures__left
+                    - var pictures = ['pic1','pic2','pic3','pic4']
+                    each item in pictures
+                        li(class = 'pictures__item_' + item)
+                            .pictures__item-info
+                                .pictures__item-img creatively designed
+                                .pictures__item-desc Lorem ipsum dolor sit
+                ul.pictures__right
+                    - var pictures = ['pic5','pic6','pic7']
+                    each item in pictures
+                        li(class = 'pictures__item_' + item)
+                            .pictures__item-info
+                                .pictures__item-img creatively designed
+                                .pictures__item-desc Lorem ipsum dolor sit
+            section.opinion
+                .container
+                    .slider_2
+                        button
+                        .slider__block_2
+                            img.slier__block-img_2
+                            .slider__block-desc_2
+                            .slider__block-sign_2
+                        button
+            section.comments
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first Happy clients
+                            h2.title-second What people say
+                    ul.comments__list
+                        -
+                            var comments = [
+                            [require( "./img/ava2.png"), 'Matthew Dix', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
+                            [require( "./img/ava3.png"), 'Nick Karvounis', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
+                            [require( "./img/ava4.png"), 'Jaelynn Castillo', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
+                            [require( "./img/ava5.png"), 'Mike Petrucci', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
+                            ]
+                        each comment in comments
+                            li.comment__item
+                                img(src=comment[0]).comment__item-img
+                                .comment__item-name #{comment[1]}
+                                .comment__item-position #{comment[2]}
+                                .comment__item-desc #{comment[3]}
+            section.blog
+                .container
+                    .descriotion
+                        hgroup.title-list
+                            h4.title-first Our stories
+                            h2.title-second latest blog
+            ul.blog__list
                 -
-                    var sections = [
-
-                    [ "#main" , "Главная", "active" ],
-                    [ "#services", "Услуги"],
-                    [ "#order" , "Онлайн заявка"],
-                    [ "#contacts" , "Контакты"]
-                    ];
-                each item in sections
-                    li.navigation__item.navigation__item-header
-                        a(href=item[0] class=item[2] aria-label=item[1]).side-bar__link.side-bar__link-top #{item[1]}
-
-    main.main-content#main
-        section.section.presentation
-            .presentation__info
-                h1.presentation__title Крона Групп
-                .presentation__desc Крона Групп – центр сертификации продукции, профессиональный,
-                    | надежный партнер для участников ВЭД, имеющий опыт сертификации любых видов продукции.
-                    | Рады предложить Вам полный комплекс услуг по сертификации, декларированию и испытанию продукции и оборудования любой отрасли.
-                    | Если Вам нужен эффективный результат, комплексное решение и оперативность выполнения – позвоните в наш Центр Сертификации.
-                    | На нашем сайте Вы можете  Вы можете заполнить предварительную заявку для просчета стоимости. Не забудьте указать обратную информацию для получения ответа.
-                p.line-1.anim-typewriter.presentation__desc Узнайте стоимость on-line или позвоните нам.
-                a(href="#order" aria-label="Стоимость").presentation__button Узнать стоимоть
-            figure.presentation__image
-                .presentation__img
-                .presentation__svg
-                    svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', viewBox='0 0 1374.7 1083.6', style='enable-background:new 0 0 1374.7 1083.6;', xml:space='preserve')
-                        path.presentation__svg_cirle(opacity='.05', d='M285.2,170.1c-94.5,8.6-181.2,57.4-235.9,134.8C-34.7,423.6-54.5,621.5,349,879.8\
-                      c636.5,407.6,600,9.3,591.9-47.4c-0.8-5.5-1.4-11.1-2-16.6l-34.2-374.1C888.4,262,729.2,129.6,549.4,146L285.2,170.1z')
-        a(href="#services").header__arrow_img
-            //img(src="source/pages/index/arrow.svg", alt="arrow")#header__arrow.header__arrow_img
-
-        section.section.about(id="services")
-            .about__title
-                .about__title_name что мы оформляем ?
-            .about__title_desc Профессионализм и богатый опыт Наших сотрудников позволяет оказывать широкий спектр услуг
-
-            .about__goods
-                -
-                    var goods =[
-                    ['Сертификат соответствия тех. рглентму ТС', require('./img/sstrts.jpg') ],
-                    ['Декларации соответствия тех. рглентму ТРТС',require('./img/dstrts.jpg')],
-                    ['Добровольные сертификаты соответствия ГОСТ Р',require('./img/ssgost.jpg')],
-                    ['Иинформационные/отказные письма',require('./img/otk.jpg')],
-                    ['Сертификат менеджмента качества',require('./img/iso.jpg')],
-                    ['Декларация соответствия ГОСТ Р',require('./img/dsgost.jpg')],
-                    ['Разработка технических условий',require('./img/tu.png')],
-                    ['Оформление протоколов испытаний', require('./img/pi.jpg')]
+                    var blogs = [
+                    [require("./img/women.png") , '15' , 'Jan' , 'Lorem ipsum dolor sit amet' , 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sed do eiusmod' ],
+                    [require("./img/laptop_1.png") , '14' , 'Jan' , 'sed do eiusmod tempor' , 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' ],
+                    [require("./img/tablet.png") , '12' , 'Jan' , 'incididunt ut labore et dolore' , 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magn' ]
                     ]
-                each good in goods
-                    .about__good
-                        img(src=good[1] , alt=good[0]).about__good_img
-                        a(href="XXXX" aria-label=good[0]).about__good_button
-                        .about__good_title #{good[0]}
-            svg(viewBox="0 0 458 272", xmlns='http://www.w3.org/2000/svg').about__svg
-                g.about__svg__blog-line
-                    polyline.about__svg-polyline(points="120 120, 300 154, 174 258, 213 21, 81 44,12 192,300 155, 174 258, 12 192 ")
-                    polyline.about__svg-polyline(points="446 226,432 66, 301 191,446 226 ")
-                    polyline.about__svg-polyline(points="446 226, 335 14, 215 180, 271 57, 446 226 ")
-                g.about__svg__blog-circle
-                    circle.about__svg-circle(cx="12", cy="191", r="10")
-                    circle.about__svg-circle(cx="174", cy="259", r="9")
-                    circle.about__svg-circle(cx="334", cy="13", r="13")
-                    circle.about__svg-circle(cx="445", cy="228", r="8")
-                    circle.about__svg-circle(cx="81", cy="43", r="7")
-                    circle.about__svg-circle(cx="214", cy="19", r="7")
-                    circle.about__svg-circle(cx="115", cy="120", r="7")
-                    circle.about__svg-circle(cx="216", cy="180", r="7")
-                    circle.about__svg-circle(cx="272", cy="57", r="7")
-                    circle.about__svg-circle(cx="299", cy="154", r="7")
-                    circle.about__svg-circle(cx="301", cy="192", r="7")
-                    circle.about__svg-circle(cx="433", cy="65", r="7")
-        section.section.documents
-            .documents__section
-                h2.section__tittle Наши приемущества
-                ul.section__list
-                    -
-                        var items = [{article:'Широкий спектр услуг' , desc : 'Широкий выбор оформляемых документов. Не нужно искать десятки компаний, все документы можно оформить в одном месте.'},
-                        {article:'Сроки оформления' , desc:'Оперативное оформление и регистрация документов, сжатые сроки выполнения работ. При необходимости возможна регистрация документов в день обращения.' },
-                        {article: 'Лояльный подход', desc :'Оформление документов в соответствии с потребностями и желаниями клиента. Грамотная консультация по необходимым требованиям относительно Вашей продукции или услуг.'},
-                        {article: 'Профессиональные специалисты' , desc: 'Наши эксперты по сертификации обладают необходимой квалификацией в сфере подтверждения соответствия и имеют необходимое высшее техническое образованием.' },
-                        {article:'Регистрация документов', desc: 'Выдаваемые документы включены в реестры ФСА в соответствии с действующим законодательством. Мы являемся членом Таможенного союза и включаем в себя все области аккредитации.'}]
-                    each item in items
-                        li.section__list_item
-                            a.section__list_trigger #{item.article}
-                            .section__list_content #{item.desc}
+                each blog in blogs
+                    li.blog__list
+                        a.blog__link
+                            img(src=blog[0]).blog__list-img
+                            .blog__list-date
+                                .blog__list-number #{blog[1]}
+                                .blog__list-month #{blog[2]}
+                            .blog__list-title #{blog[3]}
+                            .blog__list-desc #{blog[4]}
+                            ul.observ
+                                - var observers =  [ ['572', '17'] ,['992','42'] ,['1560' ,'98']]
+                                each observer in observers
+                                    .observ-number #{observer[0]}
+                                    .observ-comments #{observer[1]}
+            section.map
+                .container
+                    .map__title
+            footer.footer
+                .container
+                    .footer__left
+                        .footer__description
+                            .footer__title
+                            .footer__text
+                        .footer__followers #[strong 15K] followers
+                        ul.footer__links
+                            -
+                                var links = [
+                                ['facebook', 'https://www.facebook.com/'],
+                                ['twitter' , 'https://twitter.com/'],
+                                ['instagram' , 'https://www.instagram.com/'],
+                                ['pinterest' , 'https://www.pinterest.ru/'],
+                                ['google', 'https://www.google.com/'],
+                                ['youtube' ,'https://www.youtube.com/'],
+                                ['dribble','https://dribbble.com/' ],
+                                ['tumblr', 'https://www.tumblr.com/']
+                                ]
+                            each link in links
+                                li(class="footer__item-" + link[0])
+                                    a(href=link[1] class="footer__link-" + link[0]) #{link[1]}
+                        form.footer__form
+                            input(name="email" type="email" id="email" placeholder="Your Email..." title="Enter your e-mail" class="input__email")
+                            input(value="Subscribe" type="submit")
+                    .footer__middle
+                        .footer__middle-title Blogs
+                        ul.footer__list
+                            -
+                                var list =  [
+                                [require("./img/chandelier.png"),'Lorem ipsum dolor sit amet,  consectetur adipiscing', 'Jan 9, 2016'],
+                                [require("./img/pic_1.png"),'Consectetur adipiscing elit,  sed do eiusmod tempor', 'Jan 9, 2016'],
+                                [require("./img/men_with_gita.png"),'sed do eiusmod tempor  incididunt ut labore', 'Jan 9, 2016']
+                                ]
+                        each item in list
+                            li.footer__item
+                                a.fooer__middle-link
+                                    img(src=item[0]).footer__item-pic
+                                    .footer__item-desc #{item[1]}
+                                    .footer__item-date #{item[2]}
+                    .footer__right
+                        .footer__right_title Instagram
+                        ul.footer__photos
+                            -
+                                var photos = [require('./img/photos-1.png'), require('./img/photos-2.png'), require('./img/photos-3.png'),
+                                require('./img/photos-4.png'),require("./img/photos-5.png"), require('./img/photos-2.png'),
+                                require('./img/photos-3.png'),require('./img/photos-4.png'),require("./img/photos-5.png")]
+                            each photo in photos
+                                li.photos__item
+                                    img(src=photo).photos__item-img
+                        a(href="#").photos__link View more photos
+                    .footer__bottom
+                        p.footer__bottom_text 2019 MoGo Alex
 
 
-        section.section.form(id="order")
 
-            svg.about__svg2
-                g.about__svg__blog-line
-                    polyline.about__svg-polyline(points="7 153,72 110, 150 107, 234 164, 202 8, 255 67,99 35,202 8")
-                    polyline.about__svg-polyline(points="7 153,99 35, 150 108")
-                g.hero__svg__blog-circle
-                    circle.about__svg-circle(cx="7", cy="153", r="7")
-                    circle.about__svg-circle(cx="72", cy="110", r="4")
-                    circle.about__svg-circle(cx="150", cy="107", r="7")
-                    circle.about__svg-circle(cx="234", cy="164", r="7")
-                    circle.about__svg-circle(cx="202", cy="8", r="7")
-                    circle.about__svg-circle(cx="255", cy="67", r="7")
-                    circle.about__svg-circle(cx="99", cy="35", r="4")
-            .container.container-form
-                h2.container-form__title Узнать стоимость оформления
-                form.order__form(method="POST")
-                    .form-row
-                        .form-group.col-md-6
-                            label(for='good') Наименование продукции
-                            input#good.form-control(name="good" type='text', placeholder='наименование продукции' required)
-                        .form-group.col-md-6
-                            label(for='code') Код ТН ВЭД продукии
-                            input#code.form-control(name="code" type='number', placeholder='код ТН ВЭД' maxlength="14")
-                    .form-group
-                        label(for='description') Краткое описание продукции
-                        textarea#description.form-control( rows="4" name="description" type='text', placeholder='описание продукции')
-                    .form-row
-                        .form-group.col-md-6
-                            label(for='email') E-mail
-                            input#email.form-control(name="email" type='email', placeholder='E-mail' autocomplete="on")
-                        .form-group.col-md-6
-                            label(for='phone') Телефон
-                            input#phone.form-control(name="phone" type='tel', placeholder='номер телефон')
-                    .form-group
-                        label(for='name') Ф.И.О.
-                        input#name.form-control(name="name" type='text', placeholder='Ваше Имя')
-                        .g-recaptcha.captcha__display(data-sitekey="6LcUPIEUAAAAAA5jB7cXNeP9Vyvks8l1QPSimMDS")
-                    button.btn.btn-primary(type='submit') Отправить
-        section.section.map(id="contacts")
-            .map__contacts
-                h2.map__contacts_title Контакты
-                ul.contacts__list
-                    -
-                        var numbers = [
-                        [require("./img/mobile_phone.png") , '8(926)639-46-84'],
-                        [require("./img/phone.png") , '8(985)177-28-21'],
-                        [require("./img/email.png"), 'alex-sert2015@mail.ru'],
-                        [require("./img/direction.png"), 'Москва, ул. Коминтерна д7.к2']
-                        ]
-                    each item in numbers
-                        figure.contacts__list_blog
-                            img(src=item[0]).contact__img
-                            li.contact__item #{item[1]}
-            .container-map
-                #map.yandex-map.ymaps-layers-pane
-        a.btn_up.material-icons(href="#") arrow_upward
-        include ../../components/footer/footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

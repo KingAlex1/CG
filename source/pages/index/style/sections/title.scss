@@ -1,0 +1,38 @@
+.descriotion {
+  display: block;
+  text-align: center;
+  position: relative;
+}
+
+.title-list {
+
+}
+
+.title-first {
+  margin-top: 88px;
+  font-size: 24px;
+}
+
+.title-second {
+  margin-top: 22px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.title-line {
+  display: inline-block;
+  width: 60px;
+  height: 3px;
+  background-color: $tomato;
+  margin-top: 38px;
+}
+
+.description__info {
+  font-size: 15px;
+  color: $grey;
+  width: 990px;
+  margin: auto;
+  margin-top: 44px;
+  line-height: 1.6;
+}

@@ -1,0 +1,84 @@
+.service {
+
+}
+
+.service__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  & li:nth-child(-n+3){
+    border-bottom-color: $grey;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+  }
+}
+
+.service__item {
+  max-width: 400px;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.service__item-img {
+  padding: 30px;
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+}
+
+.service__item-info {
+  text-align: left;
+  font-weight: 600;
+
+}
+
+.service__item-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
+
+}
+
+.service__item-desc {
+
+  font-size: 15px;
+  line-height: 1.6;
+  color: $grey;
+  width: 260px;
+  margin-top: 16px;
+  font-weight: 500;
+
+}
+
+.service__item-img-photo {
+  background-image: url("../img/ALARM.png");
+}
+
+.service__item-img-web {
+  background-image: url("../img/LINE GRAPH.png");
+}
+
+.service__item-img-creative {
+  background-image: url("../img/COMPUTER _ OK.png");
+}
+
+.service__item-img-seo {
+  background-image: url("../img/BOOK 2.png");
+}
+
+.service__item-img-css {
+  background-image: url("../img/HOME.png");
+}
+
+.service__item-img-digital {
+  background-image: url("../img/IMAGE.png");
+}
+
+
+
+

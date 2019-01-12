@@ -1,0 +1,37 @@
+.devices {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-image: url("../img/bluredhills.png");
+  background-size: cover;
+  background-position: center center;
+
+}
+
+.title-first-pic {
+  margin: 0;
+  padding-top: 88px;
+}
+
+.devices__phone {
+  background-image: url("../img/display bg 768x1024.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  z-index: 9;
+  height: 582px;
+  margin-top: 40px;
+  position: relative;
+}
+
+.devices__small-phone {
+
+  position: absolute;
+  background-image: url("../img/White.png");
+  background-size: cover;
+  background-position: center center;
+  z-index: 10;
+  width: 206px;
+  height: 438px;
+  left: 63%;
+  top: 37%;
+}

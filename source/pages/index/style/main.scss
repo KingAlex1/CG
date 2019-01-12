@@ -1,29 +1,32 @@
 // adjustment variables
-$container-width:960px;
-$body-font:'fira_sansregular', Helvetica, serif;
+$container-width: 1200px;
+$body-font: 'fira_sansregular', Helvetica, serif;
 
 //colors
 
-$blue:#fff ;
-$grey:#fff ;
+$minty: rgba(149, 225, 211, 1);
+$lightLightGrey: rgba(248, 248, 248, 1);
+$white:rgba(255,255,255,1);
+$lemon: rgba(252,227,138,1);
+$tomato:rgba(243,129,129,1);
+$overlay:rgba(255,255,255,0.15);
+$grey:rgb(153, 153, 153);
+$lightGrey:rgb(229, 229, 229);
 
-//layouts
+  //layouts
 @import "../../../fonts/stylesheet";
 @import "../../../components/_mics/mixins";
 @import "../../../components/_mics/adjustment";
-@import "~normalize.css";
 
 //styles
-@import "sections/about";
-@import "sections/animation";
-@import "sections/buttom";
-@import "sections/documents";
-@import "sections/form";
-@import "sections/index";
-@import "sections/info";
-@import "sections/map";
-@import "sections/preloader";
 
-//media
+@import "sections/title";
+@import "sections/header";
+@import "sections/about";
+@import "sections/results";
+@import "sections/service";
+@import "sections/devices";
+@import "sections/ourService";
+@import "sections/comments";
 
 

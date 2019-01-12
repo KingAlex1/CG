@@ -1,0 +1,113 @@
+.ourService {
+
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 90px;
+}
+
+.info__left {
+  width: 570px;
+  height: 380px;
+}
+
+.info__left-pic {
+  width: 100%;
+}
+
+.info__right {
+  margin-left: 30px;
+  width: 600px;
+  height: 380px;
+
+}
+
+.info__right-item {
+
+}
+
+.info__right-item-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color:$lightGrey;
+  position: relative;
+  cursor: pointer;
+}
+
+.info__right-item-pic {
+  width: 32px;
+  height: 32px;
+  padding: 14px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.info__right-item-title {
+  text-transform: uppercase;
+}
+
+.info__right-item-desc {
+  border-collapse: collapse;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  color: $grey;
+  padding: 14px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $lightGrey;
+  //margin-top: -10px;
+  max-height: 174px;
+  height: 174px;
+  overflow-y: scroll ;
+  display: none;
+}
+
+.info__right-item:first-child .info__right-item-desc {
+
+    display: block;
+
+}
+
+.info__right-item:nth-child(1), .info__right-item:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+
+  .info__right-item-photo {
+  background-image: url("../img/mountins.png");
+}
+
+.info__right-item-creative {
+  background-image: url("../img/EQUALIZER.png");
+}
+
+.info__right-item-web {
+  background-image: url("../img/BULLSEYE.png");
+}
+
+
+.triangle {
+  position: absolute;
+  border-right: 3px solid;
+  border-bottom: 3px solid;
+  width: 14px;
+  height: 14px;
+  color: $lightGrey;
+  transform: rotate(45deg);
+  right: 20px;
+  transition: all 0.5s ease-in-out;
+}
+
+.active_triangle{
+  transform: rotate(225deg);
+}
+
+
+
