@@ -1,6 +1,6 @@
 import 'normalize.css';
 import './style/main.scss';
-import '../../components/footer/index.js';
+// import '../../components/footer/index.js';
 
 
 import preloader from './js/preloader';
@@ -85,6 +85,29 @@ $(document).ready(function () {
     moveSlides($('.slider__container'), 'right');
     counter++;
   }, 2000);
+
+    // Open map
+
+  let map = $('.map');
+  let mapInfo = $('.map__info');
+  let close = $('.close');
+  let height = $('.map').css('height');
+
+  mapInfo.on('click', function () {
+    map.animate({
+      height: '600px',
+    }, 500);
+    mapInfo.fadeOut(500);
+    close.fadeIn(500);
+  });
+
+  close.on('click', function () {
+    map.animate({
+      height: height,
+    });
+    close.fadeOut(500);
+    mapInfo.fadeIn(500);
+  });
 
 });
 

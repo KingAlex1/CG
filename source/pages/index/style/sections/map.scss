@@ -1,0 +1,75 @@
+.map {
+
+  background-image: url("../img/snazzy-image (2).png");
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+  margin-top: 116px;
+  background-attachment: fixed;
+
+}
+
+.map__info {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 56px;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.map__sign {
+  background-image: url("../img/PIN 2.png");
+  width: 20px;
+  height: 28px;
+  margin: 0 auto;
+}
+
+.map__title {
+  font-size: 22px;
+  text-transform: uppercase;
+  color: $tomato;
+  position: relative;
+  font-weight: 600;
+  padding: 20px;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: $tomato;
+    bottom: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 60px;
+    height: 3px;
+  }
+}
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  display: none;
+  cursor: pointer;
+
+}
+
+.close:before, .close:after {
+  position: absolute;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: $tomato;
+
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

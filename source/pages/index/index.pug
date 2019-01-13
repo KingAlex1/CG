@@ -250,27 +250,29 @@ block content
                     ul.blog__list
                         -
                             var blogs = [
-                            [require("./img/women.png") , '15' , 'Jan' , 'Lorem ipsum dolor sit amet' , 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sed do eiusmod' ],
-                            [require("./img/laptop_1.png") , '14' , 'Jan' , 'sed do eiusmod tempor' , 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' ],
-                            [require("./img/tablet.png") , '12' , 'Jan' , 'incididunt ut labore et dolore' , 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magn' ]
+                            [require("./img/women.png") , '15' , 'Jan' , 'Lorem ipsum dolor sit amet' , 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sed do eiusmod' , '572' , '17'],
+                            [require("./img/laptop_1.png") , '14' , 'Jan' , 'sed do eiusmod tempor' , 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et ', '992','42' ],
+                            [require("./img/tablet.png") , '12' , 'Jan' , 'incididunt ut labore et dolore' , 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magn', '1560' ,'98' ]
                             ]
                         each blog in blogs
-                            li.blog__list
+                            li.blog__item
                                 a.blog__link
-                                    img(src=blog[0]).blog__list-img
-                                    .blog__list-date
-                                        .blog__list-number #{blog[1]}
-                                        .blog__list-month #{blog[2]}
-                                    .blog__list-title #{blog[3]}
-                                    .blog__list-desc #{blog[4]}
-                                    ul.observ
-                                        - var observers =  [ ['572', '17'] ,['992','42'] ,['1560' ,'98']]
-                                        each observer in observers
-                                            .observ-number #{observer[0]}
-                                            .observ-comments #{observer[1]}
+                                    .blog__list-img
+                                        img(src=blog[0]).blog__list-pic
+                                        .blog__list-date
+                                            .blog__list-number #{blog[1]}
+                                            .blog__list-month #{blog[2]}
+                                    .blog__lost-info
+                                        .blog__list-title #{blog[3]}
+                                        .blog__list-desc #{blog[4]}
+                                    .observ
+                                        .observ-number #{blog[5]}
+                                        .observ-comments #{blog[6]}
             section.map
-                .container
-                    .map__title
+                    .map__info
+                        .map__sign
+                        .map__title Open map
+                    .close
             footer.footer
                 .container
                     .footer__left
