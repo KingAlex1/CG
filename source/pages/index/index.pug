@@ -269,18 +269,18 @@ block content
                                         .observ-number #{blog[5]}
                                         .observ-comments #{blog[6]}
             section.map
-                    .map__info
-                        .map__sign
-                        .map__title Open map
-                    .close
+                .map__info
+                    .map__sign
+                    .map__title Open map
+                .close
             footer.footer
-                .container
+                .container.footer__container
                     .footer__left
                         .footer__description
-                            .footer__title
-                            .footer__text
+                            .footer__title MoGo
+                            .footer__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolorem in laudantium officiis praesentium quo rem sit vero. A, culpa cum dolore facilis ipsum iure quibusdam sapiente sequi sunt voluptatem.
                         .footer__followers #[strong 15K] followers
-                        ul.footer__links
+                        ul.footer__list Follow us:
                             -
                                 var links = [
                                 ['facebook', 'https://www.facebook.com/'],
@@ -293,26 +293,27 @@ block content
                                 ['tumblr', 'https://www.tumblr.com/']
                                 ]
                             each link in links
-                                li(class="footer__item-" + link[0])
-                                    a(href=link[1] class="footer__link-" + link[0]) #{link[1]}
+                                li(class="footer__item-" + link[0]).footer__item-left
+                                    a(href=link[1] class="footer__link-" + link[0]).footer__link
                         form.footer__form
-                            input(name="email" type="email" id="email" placeholder="Your Email..." title="Enter your e-mail" class="input__email")
-                            input(value="Subscribe" type="submit")
+                            input(name="email" type="email" id="email" placeholder="Your Email..." title="Enter your e-mail" class="input__email").footer__mail
+                            input(value="Subscribe" type="submit").footer__button
                     .footer__middle
                         .footer__middle-title Blogs
-                        ul.footer__list
+                        ul.footer__list-middle
                             -
                                 var list =  [
                                 [require("./img/chandelier.png"),'Lorem ipsum dolor sit amet,  consectetur adipiscing', 'Jan 9, 2016'],
                                 [require("./img/pic_1.png"),'Consectetur adipiscing elit,  sed do eiusmod tempor', 'Jan 9, 2016'],
                                 [require("./img/men_with_gita.png"),'sed do eiusmod tempor  incididunt ut labore', 'Jan 9, 2016']
                                 ]
-                        each item in list
-                            li.footer__item
-                                a.fooer__middle-link
-                                    img(src=item[0]).footer__item-pic
-                                    .footer__item-desc #{item[1]}
-                                    .footer__item-date #{item[2]}
+                            each item in list
+                                li.footer__item
+                                    a.fooer__middle-link
+                                        img(src=item[0]).footer__item-pic
+                                        .footer__item-info
+                                          .footer__item-desc #{item[1]}
+                                          .footer__item-date #{item[2]}
                     .footer__right
                         .footer__right_title Instagram
                         ul.footer__photos
@@ -324,6 +325,7 @@ block content
                                 li.photos__item
                                     img(src=photo).photos__item-img
                         a(href="#").photos__link View more photos
+                .container
                     .footer__bottom
                         p.footer__bottom_text 2019 MoGo Alex
 

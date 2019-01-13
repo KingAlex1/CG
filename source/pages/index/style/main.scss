@@ -10,6 +10,7 @@ $white:rgba(255,255,255,1);
 $lemon: rgba(252,227,138,1);
 $tomato:rgba(243,129,129,1);
 $overlay:rgba(255,255,255,0.15);
+$blackGrey: rgb(51, 51, 51);
 $grey:rgb(153, 153, 153);
 $lightGrey:rgb(229, 229, 229);
 
@@ -35,6 +36,7 @@ $lightGrey:rgb(229, 229, 229);
 @import "sections/clients";
 @import "sections/blog";
 @import "sections/map";
+@import "sections/footer";
 
 
 
