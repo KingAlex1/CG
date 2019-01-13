@@ -1,0 +1,146 @@
+.team {
+
+}
+
+.team__list {
+  display: flex;
+  margin-top: 92px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;;
+}
+
+.team__item {
+  background-color: $minty;
+  width: 380px;
+  height: 470px;
+  margin: 0 15px;
+
+}
+
+.team__item__img {
+  height: 100%;
+}
+
+.team__photo {
+  height: 100%;
+  position: relative;
+
+}
+
+.team__photo-pic1 {
+  background-image: url("../img/men1.png");
+
+  &:hover {
+    transform: translate(-10px, -10px);
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/men1.png");
+    .socials {
+      visibility: visible;
+    }
+  }
+}
+
+.team__photo-pic2 {
+  background-image: url("../img/men2.png");
+  &:hover {
+    transform: translate(-10px, -10px);
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/men2.png");
+    .socials {
+      visibility: visible;
+    }
+  }
+}
+
+.team__photo-pic3 {
+  background-image: url("../img/men3.png");
+  &:hover {
+    transform: translate(-10px, -10px);
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/men3.png");
+    .socials {
+      visibility: visible;
+    }
+  }
+}
+
+.team__info {
+  text-align: center;
+  margin-top: 28px;
+}
+
+.team__name {
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 20px;
+  vertical-align: center;;
+}
+
+.team__position {
+  font-size: 16px;
+  color: $grey;
+  line-height: 20px;
+  vertical-align: center;
+
+}
+
+.socials {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  visibility: hidden;
+
+}
+
+.socials__item {
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 56px;
+  height: 56px;
+  background-color: #fce38a;
+  &:hover {
+    background-color: #f38181;
+  }
+}
+
+.socials__link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.fb {
+  background-image: url("../img/facebook3.png");
+
+  &:hover {
+    background-image: url("../img/facebook.png");
+
+  }
+}
+
+.tw {
+  background-image: url("../img/twitter.png");
+  &:hover {
+    background-image: url("../img/twitter3.png");
+
+  }
+}
+
+.pt {
+  background-image: url("../img/pinterest.png");
+  &:hover {
+    background-image: url("../img/pinterest3.png");
+
+  }
+}
+
+.inst {
+  background-image: url("../img/instagram.png");
+  &:hover {
+    background-image: url("../img/instagram3.png");
+
+  }
+}
+

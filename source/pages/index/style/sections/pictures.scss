@@ -1,0 +1,133 @@
+.pictures {
+  margin-top: 100px;
+  display: flex;
+}
+
+.picture__container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.pictures__left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 780px;
+}
+
+.pictures__item {
+  width: 480px;
+  height: 390px;
+  position: relative;
+  &:hover {
+    .pictures__item-info {
+      visibility: visible;
+    }
+  }
+
+
+}
+
+.pictures__item_pic1 {
+  background-image: url("../img/back.png");
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/back.png");
+  }
+}
+
+.pictures__item_pic2 {
+  background-image: url("../img/roof.png");
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/roof.png");
+  }
+
+}
+
+.pictures__item_pic3 {
+  background-image: url("../img/breage.png");
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/breage.png");
+  }
+
+}
+
+.pictures__item_pic4 {
+  background-image: url("../img/wall.png");
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/wall.png");
+  }
+
+}
+
+.pictures__right {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  max-height: 780px;
+}
+
+.pictures__item_pic5 {
+  background-image: url("../img/jellyfish.png");
+  height: 780px;
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/jellyfish.png");
+  }
+}
+
+.pictures__item_pic6 {
+  background-image: url("../img/Rectangle 17 copy 4.png");
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/Rectangle 17 copy 4.png");
+  }
+}
+
+.pictures__item_pic7 {
+
+  background-image: url("../img/Rectangle 17 copy 5.png");
+  &:hover {
+    background: linear-gradient(90deg, rgba(252, 227, 138, 0.5) 0%, rgba(243, 129, 129, 0.5) 100%), url("../img/Rectangle 17 copy 5.png");
+  }
+}
+
+.pictures__item-info {
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: $white;
+  visibility: hidden;
+
+}
+
+.pictures__item-img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/PICTURE_2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 10px;
+
+}
+
+.pictures__item-position {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 18px;
+  vertical-align: center;
+}
+
+.pictures__item-desc {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 20px;
+  vertical-align: central;
+}
+

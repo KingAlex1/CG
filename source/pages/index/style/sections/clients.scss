@@ -1,0 +1,74 @@
+.clients {
+  background-image: url("../img/bluredhills.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.descriotion__clients {
+  padding-top: 106px;
+}
+
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 600px;
+  padding: 88px 0;
+
+}
+
+.client__item {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  //margin-top: 64px;
+
+}
+
+.client__item-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 0 24px 24px 40px ;
+}
+
+.client__item-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 66px;
+}
+
+.client__item-name {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 30px;
+  vertical-align: center;
+}
+
+.client__item-position {
+  font-style: italic;
+  line-height:24px;
+  vertical-align: center;
+  position: relative;
+
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: $tomato;
+    margin-bottom: -16px ;
+
+  }
+
+}
+
+.client__item-desc {
+  margin-top: 46px;
+  width: 380px;
+  color: $grey;
+  line-height: 28px;
+}

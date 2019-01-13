@@ -140,6 +140,7 @@ block content
                         hgroup.title-list
                             h4.title-first Who we are
                             h2.title-second Meet our team
+                        .title-line
                         .description__info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum odio porro quae quaerat sint, vitae voluptatum. Ad deleniti esse impedit nesciunt numquam quo voluptas voluptates. Accusamus ea odio sapiente sit.
                     ul.team__list
                         -
@@ -149,21 +150,24 @@ block content
                             ['pic3','Michael Fertig ','Developer']
                             ]
                         each item in team
-                            li(class = "team__item" + item[0])
-                                ul.socials
-                                    -
-                                        var socials = [
-                                        ['fb' , 'https://www.facebook.com/'],
-                                        ['tw','https://twitter.com/'],
-                                        ['pt' , 'https://www.pinterest.ru/'],
-                                        ['inst' ,'https://www.instagram.com/' ]
-                                        ]
-                                each social in socials
-                                    li(class=social[0]).socials__item
-                                        a(href=social[1]).socials__link
-                            .team__item-info
-                                .team__item-name
-                                .team__item-position
+                            .team__item
+                                li(class = "team__photo-" + item[0]).team__item__img
+                                    .team__photo
+                                        ul.socials
+                                            -
+                                                var socials = [
+                                                ['fb' , 'https://www.facebook.com/'],
+                                                ['tw','https://twitter.com/'],
+                                                ['pt' , 'https://www.pinterest.ru/'],
+                                                ['inst' ,'https://www.instagram.com/' ]
+                                                ]
+                                            each social in socials
+                                                li(class=social[0]).socials__item
+                                                    a(href=social[1]).socials__link
+                                .team__info
+                                    .team__name #{item[1]}
+                                    .team__position #{item[2]}
+
             section.logos
                 .container
                     img(src=require('./img/logos.png')).logos__picture
@@ -173,78 +177,97 @@ block content
                         hgroup.title-list
                             h4.title-first What we do
                             h2.title-second some of our work
+                        .title-line
                         .description__info Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum odio porro quae quaerat sint, vitae voluptatum. Ad deleniti esse impedit nesciunt numquam quo voluptas voluptates. Accusamus ea odio sapiente sit.
             section.pictures
-                ul.pictures__left
-                    - var pictures = ['pic1','pic2','pic3','pic4']
-                    each item in pictures
-                        li(class = 'pictures__item_' + item)
-                            .pictures__item-info
-                                .pictures__item-img creatively designed
-                                .pictures__item-desc Lorem ipsum dolor sit
-                ul.pictures__right
-                    - var pictures = ['pic5','pic6','pic7']
-                    each item in pictures
-                        li(class = 'pictures__item_' + item)
-                            .pictures__item-info
-                                .pictures__item-img creatively designed
-                                .pictures__item-desc Lorem ipsum dolor sit
+                .picture__container
+                    ul.pictures__left
+                        - var pictures = ['pic1','pic2','pic3','pic4']
+                        each item in pictures
+                            li(class = 'pictures__item_' + item).pictures__item
+                                .pictures__item-info
+                                    .pictures__item-img
+                                    .pictures__item-position creatively designed
+                                    .pictures__item-desc Lorem ipsum dolor sit
+                    ul.pictures__right
+                        - var pictures = ['pic5','pic6','pic7']
+                        each item in pictures
+                            li(class = 'pictures__item_' + item).pictures__item
+                                .pictures__item-info
+                                    .pictures__item-img
+                                    .pictures__item-position creatively designed
+                                    .pictures__item-desc Lorem ipsum dolor sit
             section.opinion
                 .container
-                    .slider_2
-                        button
-                        .slider__block_2
-                            img.slier__block-img_2
-                            .slider__block-desc_2
-                            .slider__block-sign_2
-                        button
-            section.comments
+                    .slider
+                        button.slider__button.slider__button-left
+                        .slider__container
+                            .slider__block.slider__active
+                                img(src=require("./img/ava1.png")).slier__block-img_opinion
+                                .slider__block-info.slider__block-info_opinion
+                                    .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
+                                    .slider__block-sign Jon Dor
+                            .slider__block
+                                img(src=require("./img/ava2.png")).slier__block-img_opinion
+                                .slider__block-info.slider__block-info_opinion
+                                    .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
+                                    .slider__block-sign Jon Dor
+                            .slider__block
+                                img(src=require("./img/ava3.png")).slier__block-img_opinion
+                                .slider__block-info.slider__block-info_opinion
+                                    .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
+                                    .slider__block-sign Jon Dor
+                        button.slider__button.slider__button-right
+            section.clients
                 .container
-                    .descriotion
+                    .descriotion.descriotion__clients
                         hgroup.title-list
                             h4.title-first Happy clients
                             h2.title-second What people say
-                    ul.comments__list
+                        .title-line
+                    ul.clients__list
                         -
-                            var comments = [
+                            var clients = [
                             [require( "./img/ava2.png"), 'Matthew Dix', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
                             [require( "./img/ava3.png"), 'Nick Karvounis', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
                             [require( "./img/ava4.png"), 'Jaelynn Castillo', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
                             [require( "./img/ava5.png"), 'Mike Petrucci', 'Graphic Design' , 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquam, assumenda aut commodi cum deleniti dolore earum exercitationem fuga hic iure laudantium modi officia optio'],
                             ]
-                        each comment in comments
-                            li.comment__item
-                                img(src=comment[0]).comment__item-img
-                                .comment__item-name #{comment[1]}
-                                .comment__item-position #{comment[2]}
-                                .comment__item-desc #{comment[3]}
+                        each client in clients
+                            li.client__item
+                                img(src=client[0]).client__item-img
+                                .client__item-info
+                                    .client__item-name #{client[1]}
+                                    .client__item-position #{client[2]}
+                                    .client__item-desc #{client[3]}
             section.blog
                 .container
                     .descriotion
                         hgroup.title-list
                             h4.title-first Our stories
                             h2.title-second latest blog
-            ul.blog__list
-                -
-                    var blogs = [
-                    [require("./img/women.png") , '15' , 'Jan' , 'Lorem ipsum dolor sit amet' , 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sed do eiusmod' ],
-                    [require("./img/laptop_1.png") , '14' , 'Jan' , 'sed do eiusmod tempor' , 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' ],
-                    [require("./img/tablet.png") , '12' , 'Jan' , 'incididunt ut labore et dolore' , 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magn' ]
-                    ]
-                each blog in blogs
-                    li.blog__list
-                        a.blog__link
-                            img(src=blog[0]).blog__list-img
-                            .blog__list-date
-                                .blog__list-number #{blog[1]}
-                                .blog__list-month #{blog[2]}
-                            .blog__list-title #{blog[3]}
-                            .blog__list-desc #{blog[4]}
-                            ul.observ
-                                - var observers =  [ ['572', '17'] ,['992','42'] ,['1560' ,'98']]
-                                each observer in observers
-                                    .observ-number #{observer[0]}
-                                    .observ-comments #{observer[1]}
+                        .title-line
+                    ul.blog__list
+                        -
+                            var blogs = [
+                            [require("./img/women.png") , '15' , 'Jan' , 'Lorem ipsum dolor sit amet' , 'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut sed do eiusmod' ],
+                            [require("./img/laptop_1.png") , '14' , 'Jan' , 'sed do eiusmod tempor' , 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore et ' ],
+                            [require("./img/tablet.png") , '12' , 'Jan' , 'incididunt ut labore et dolore' , 'Elit, sed do eiusmod tempor incididunt ut labore et dolore magn' ]
+                            ]
+                        each blog in blogs
+                            li.blog__list
+                                a.blog__link
+                                    img(src=blog[0]).blog__list-img
+                                    .blog__list-date
+                                        .blog__list-number #{blog[1]}
+                                        .blog__list-month #{blog[2]}
+                                    .blog__list-title #{blog[3]}
+                                    .blog__list-desc #{blog[4]}
+                                    ul.observ
+                                        - var observers =  [ ['572', '17'] ,['992','42'] ,['1560' ,'98']]
+                                        each observer in observers
+                                            .observ-number #{observer[0]}
+                                            .observ-comments #{observer[1]}
             section.map
                 .container
                     .map__title
