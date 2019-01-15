@@ -17,7 +17,8 @@ html {
 }
 
 body {
-  font-family: $body-font;
+  @include montserrat();
+  //font-family: $body-font;
 
 }
 

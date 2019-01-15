@@ -32,7 +32,7 @@ block content
                                 li.slider__item
                                     .slider__item-number #{item[0]}
                                     .slider__item-desc #{item[1]}
-            section.about
+            section.about#about
                 .container
                     .descriotion
                         hgroup.title-list
@@ -56,7 +56,7 @@ block content
                             li.results__item
                                 .results__item-number #{result[0]}
                                 .results__item-desc #{result[1]}
-            section.service
+            section.service#service
                 .container
                     .descriotion
                         hgroup.title-list
@@ -171,7 +171,7 @@ block content
             section.logos
                 .container
                     img(src=require('./img/logos.png')).logos__picture
-            section.work
+            section.work#work
                 .container
                     .descriotion
                         hgroup.title-list
@@ -201,18 +201,18 @@ block content
                 .container
                     .slider
                         button.slider__button.slider__button-left
-                        .slider__container
-                            .slider__block.slider__active
+                        .slider__container-2
+                            .slider__block-2.slider__active
                                 img(src=require("./img/ava1.png")).slier__block-img_opinion
                                 .slider__block-info.slider__block-info_opinion
                                     .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
                                     .slider__block-sign Jon Dor
-                            .slider__block
+                            .slider__block-2
                                 img(src=require("./img/ava2.png")).slier__block-img_opinion
                                 .slider__block-info.slider__block-info_opinion
                                     .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
                                     .slider__block-sign Jon Dor
-                            .slider__block
+                            .slider__block-2
                                 img(src=require("./img/ava3.png")).slier__block-img_opinion
                                 .slider__block-info.slider__block-info_opinion
                                     .slider__block-desc "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto at blanditiis cupiditate deleniti dicta ducimus, ea esse expedita illo illum incidunt ipsam nemo nostrum quia sunt tenetur totam vitae!"
@@ -240,7 +240,7 @@ block content
                                     .client__item-name #{client[1]}
                                     .client__item-position #{client[2]}
                                     .client__item-desc #{client[3]}
-            section.blog
+            section.blog#blog
                 .container
                     .descriotion
                         hgroup.title-list
@@ -268,7 +268,7 @@ block content
                                     .observ
                                         .observ-number #{blog[5]}
                                         .observ-comments #{blog[6]}
-            section.map
+            section.map.ymaps-layers-pane#contact
                 .map__info
                     .map__sign
                     .map__title Open map

@@ -1,13 +1,18 @@
 .map {
 
-  background-image: url("../img/snazzy-image (2).png");
+  background-image: url("../img/MogoYmap_14-01-2019_07-46-51.png");
   background-position: center center;
   background-size: cover;
+
   position: relative;
   height: 200px;
   margin-top: 116px;
   background-attachment: fixed;
 
+}
+
+.ymaps-layers-pane {
+  filter: grayscale(1);
 }
 
 .map__info {
@@ -19,6 +24,7 @@
   padding: 56px;
   text-align: center;
   cursor: pointer;
+  z-index: 9;
 
 }
 
@@ -49,6 +55,7 @@
   }
 }
 .close {
+  z-index: 9;
   position: absolute;
   right: 32px;
   top: 32px;

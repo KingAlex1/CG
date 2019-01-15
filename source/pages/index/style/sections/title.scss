@@ -2,6 +2,7 @@
   display: block;
   text-align: center;
   position: relative;
+  padding-top: 88px;
 }
 
 .title-list {
@@ -9,7 +10,8 @@
 }
 
 .title-first {
-  margin-top: 88px;
+  @include kaushan();
+  //margin-top: 88px;
   font-size: 24px;
 }
 

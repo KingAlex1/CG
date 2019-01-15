@@ -1,3 +1,5 @@
+/* global ymaps */
+
 import 'normalize.css';
 import './style/main.scss';
 // import '../../components/footer/index.js';
@@ -6,11 +8,30 @@ import './style/main.scss';
 import preloader from './js/preloader';
 
 const $ = require('jquery');
-
+const $script = require('scriptjs');
 
 $(document).ready(function () {
 
   preloader();
+
+  //ymaps
+
+  // $script('https://api-maps.yandex.ru/2.1/?lang=ru_RU', function () {
+  //   ymaps.ready(function () {
+  //     let myMap = new ymaps.Map('map', {
+  //       center: [55.76, 37.64],
+  //       zoom: 10,
+  //       controls: [],
+  //     });
+  //
+  //     myMap.behaviors
+  //     // Отключаем часть включенных по умолчанию поведений:
+  //     //  - drag - перемещение карты при нажатой левой кнопки мыши;
+  //     //  - magnifier.rightButton - увеличение области, выделенной правой кнопкой мыши.
+  //       .disable(['drag', 'rightMouseButtonMagnifier', 'scrollZoom']);
+  //   });
+  // });
+
 
   // карусель
 
@@ -52,12 +73,12 @@ $(document).ready(function () {
     activeItem.animate({
       opacity: 0,
       left: `${strafeTopPercents}%`,
-    }, 3000);
+    }, 2000);
 
     reqItem.animate({
       left: 0,
       opacity: 1,
-    }, 3000, function () {
+    }, 2000, function () {
       activeItem.removeClass('slider__active').css('left', `${-strafeTopPercents}%`);
       $(this).addClass('slider__active');
       inProgress = false;
@@ -84,7 +105,77 @@ $(document).ready(function () {
     inProgress = true;
     moveSlides($('.slider__container'), 'right');
     counter++;
-  }, 2000);
+  }, 1000);
+
+  /// second sllider
+
+  let counter2 = 1;
+  let inProgress2 = false;
+
+
+  const moveSlides2 = (container, direction) => {
+
+    let items = container.find('.slider__block-2');
+    let activeItem = items.filter('.slider__active');
+    let strafeTopPercents = direction === 'right' ? 100 : -100;
+
+    if (counter2 >= items.length) {
+      counter2 = 0;
+    }
+
+    const reqItem = items.eq(counter2);
+
+    if (direction === 'right') {
+      items.not(activeItem).css('left', '-100%');
+    } else if (direction === 'left') {
+      items.not(activeItem).css('left', '100%');
+    }
+
+    activeItem.animate({
+      opacity: 0,
+      left: `${strafeTopPercents}%`,
+    }, 2000);
+
+    reqItem.animate({
+      left: 0,
+      opacity: 1,
+    }, 2000, function () {
+      activeItem.removeClass('slider__active').css('left', `${-strafeTopPercents}%`);
+      $(this).addClass('slider__active');
+      inProgress2 = false;
+    });
+  };
+
+  $('.slider__button-right').on('click', function () {
+    if (inProgress2) return;
+    inProgress2 = true;
+    moveSlides2($('.slider__container-2'), 'right');
+    counter2++;
+    clearInterval(sliderLoop2);
+  });
+  $('.slider__button-left').on('click', function () {
+    if (inProgress2) return;
+    inProgress2 = true;
+    moveSlides2($('.slider__container-2'), 'left');
+    counter2++;
+    clearInterval(sliderLoop2);
+  });
+
+  let sliderLoop2 = setInterval(function () {
+    if (inProgress2) return;
+    inProgress2 = true;
+    moveSlides2($('.slider__container-2'), 'right');
+    counter2++;
+  }, 1000);
+
+
+
+
+
+
+
+
+
 
     // Open map
 
@@ -109,6 +200,16 @@ $(document).ready(function () {
     mapInfo.fadeIn(500);
   });
 
+
+  // nav-bar
+  $('.navigation__link').on('click', function () {
+    let href = $(this).attr('href');
+    let section = $(href);
+    $('html, body').animate({
+      scrollTop: section.offset().top,
+    },700);
+
+  });
 });
 
 

@@ -1,5 +1,4 @@
-new project Mogo
+project Mogo
 
-webpack
-
+для установки введите yarn start
 

@@ -19,7 +19,7 @@
 }
 
 .pictures__item {
-  width: 480px;
+  max-widthwidth: 480px;
   height: 390px;
   position: relative;
   &:hover {
@@ -129,5 +129,14 @@
   font-style: italic;
   line-height: 20px;
   vertical-align: central;
+
 }
+
+
+
+
+
+
+
+
 
